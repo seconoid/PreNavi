@@ -15,11 +15,12 @@ ActiveRecord::Schema.define(version: 20161104020851) do
   create_table "students", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "s_class",    null: false
-    t.string   "s_code",     null: false
+    t.integer  "s_code",     null: false
     t.integer  "s_no",       null: false
+    t.string   "password",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["s_code", "s_no"], name: "index_students_on_s_code_and_s_no", unique: true
+    t.index ["s_code"], name: "index_students_on_s_code", unique: true
   end
 
 end

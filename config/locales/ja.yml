@@ -9,6 +9,7 @@ ja:
         s_class: クラス記号
         s_code: 学籍番号
         s_no: 出席番号
+        password: パスワード
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
