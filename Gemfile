@@ -11,6 +11,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'faker'
+gem 'carrierwave'
+gem 'rmagick'
 gem 'sdoc', group: :doc
 
 group :development, :test do
