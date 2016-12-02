@@ -4,6 +4,7 @@
 <ul class="students">
   <% @students.each do |student| %>
     <li>
+      <%= image_tag student.image.thumb.url, size:70 %>
       <%= link_to student.name, student %>
     </li>
   <% end %>
