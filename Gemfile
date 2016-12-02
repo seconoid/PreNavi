@@ -10,6 +10,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'faker'
 gem 'sdoc', group: :doc
 
 group :development, :test do
