@@ -2,20 +2,18 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
+      <h1 class="">
+        <%= image_tag @student.image.thumb.url, :class => "profile_img" %>
         <%= @student.name %>
       </h1>
-      <h2>
-        <%= image_tag @student.image.thumb.url %>
-      </h2>
       <p>
-        <%= @student.s_class %>
+        学籍番号：<%= @student.s_class %>
       </p>
       <p>
-        <%= @student.s_code %>
+        クラス記号：<%= @student.s_code %>
       </p>
       <p>
-        <%= @student.s_no %>
+        出席番号：<%= @student.s_no %>
       </p>
     </section>
   </aside>

@@ -13,7 +13,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # create thumbnail
   version :thumb do
-    process :resize_to_fill => [40, 40, gravity = ::Magick::CenterGravity]
+    process :resize_to_fill => [100, 100, gravity = ::Magick::CenterGravity]
   end
 
   # we accept only jpg, jpeg, gif, png
