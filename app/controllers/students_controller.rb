@@ -13,6 +13,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
+    @student.s_class = @student.s_class.upcase
     if @student.save
       redirect_to @student
     else
