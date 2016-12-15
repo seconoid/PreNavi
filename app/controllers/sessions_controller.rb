@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   def create
     student = Student.find_by(s_code: params[:session][:s_code].to_i)
     if student && student.authenticate(params[:session][:password])
+      flash[:info] = 'ログインしました。'
       log_in student
       redirect_to student
     else
@@ -14,5 +15,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    flash[:info] = 'ログアウトしました。'
+    log_out
+    redirect_to root_url
   end
 end

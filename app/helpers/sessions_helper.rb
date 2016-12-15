@@ -10,4 +10,9 @@ module SessionsHelper
   def logged_in?
     !current_student.nil?
   end
+
+  def log_out
+    session.delete(:student_id)
+    @current_student = nil
+  end
 end
