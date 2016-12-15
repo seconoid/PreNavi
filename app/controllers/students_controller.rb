@@ -15,6 +15,8 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     @student.s_class = @student.s_class.upcase
     if @student.save
+      log_in @student
+      flash[:success] = "Prenaviにようこそ！"
       redirect_to @student
     else
       render 'new'
