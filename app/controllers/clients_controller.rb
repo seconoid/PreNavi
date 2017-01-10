@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   def show
     @client = Client.find(params[:format])
+    @favorites = Favorite.where("client_id = ?", @client)
   end
 
   def new

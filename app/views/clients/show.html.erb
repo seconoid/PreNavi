@@ -8,6 +8,9 @@
     </section>
     <section class="work">
       <h2>お気に入り学生一覧</h2>
+      <% @client.students.each do |student|  %>
+        <p><%= link_to student.name, student_path(student) %></p>
+      <% end %>
     </section>
     <section class="access">
     </section>
