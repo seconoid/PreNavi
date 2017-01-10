@@ -3,6 +3,7 @@ ja:
   activerecord:
     models:
       student: 学生
+      client: 企業
     attributes:
       student:
         name: 名前
@@ -10,6 +11,11 @@ ja:
         s_code: 学籍番号
         s_no: 出席番号
         password: パスワード
+      client:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワードの確認
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
