@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get 'students' => 'students#index'
   get 'signup_client' => 'clients#new'
   get 'profile' => 'clients#show'
-  resources :students
+  resources :students do
+    member do
+      post "add", to: "favorites#create"
+    end
+  end
+  resources :favorites, only: [:destroy]
   resource :client
 end

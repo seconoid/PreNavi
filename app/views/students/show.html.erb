@@ -15,6 +15,8 @@
       <p>
         出席番号：<%= @student.s_no %>
       </p>
+      <p>
+        <%= link_to "お気に入り登録", add_student_path(@student), method: :post %>
     </section>
     <section class="work">
       <h2>自己紹介</h2>
