@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       post "add", to: "favorites#create"
     end
   end
+  resources :products
   resources :favorites, only: [:destroy]
   resource :client
 end

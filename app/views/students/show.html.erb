@@ -17,10 +17,14 @@
       </p>
       <p>
         <%= link_to "お気に入り登録", add_student_path(@student), method: :post %>
+      </p>
     </section>
     <section class="work">
       <h2>自己紹介</h2>
       <h2>作品情報</h2>
+      <p>
+        <%= link_to @product.name, product_path(@product) %>
+      </p>
     </section>
     <section class="access">
     </section>

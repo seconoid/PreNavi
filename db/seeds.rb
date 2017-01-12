@@ -40,6 +40,9 @@ Student.create!(
   )
 end
 
+# product seeds
+Product.create!(student_id: 1, name: "ぷれなび", about: "就プレをよくする")
+
 # client seeds
 10.times do |n|
   name = Faker::Name.name
