@@ -41,7 +41,12 @@ Student.create!(
 end
 
 # product seeds
-Product.create!(student_id: 1, name: "ぷれなび", about: "就プレをよくする")
+Product.create!(
+  student_id: 1,
+  name: "Prenavi",
+  about: "就活プレゼンテーションでの学生と企業のやりとりをよりよくするためのアプリケーションです。",
+  url: "http://localhost:3000"
+)
 
 # client seeds
 10.times do |n|

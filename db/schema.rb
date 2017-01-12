@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 20170112012005) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer  "student_id"
+    t.integer  "student_id", null: false
     t.string   "name",       null: false
-    t.string   "about"
+    t.string   "about",      null: false
     t.string   "image"
     t.string   "url"
     t.datetime "created_at", null: false
