@@ -28,6 +28,14 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  def update
+    @student = Student.find(params[:id])
+    if @student.update_attributes(student_params)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
     def student_params
