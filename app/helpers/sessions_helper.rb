@@ -3,6 +3,10 @@ module SessionsHelper
     session[:student_id] = student.id
   end
 
+  def current_student?(student)
+    student == current_student
+  end
+
   def current_student
     @current_student ||= Student.find_by(id: session[:student_id])
   end

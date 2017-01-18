@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_action :logged_in_student, only: [:edit, :update]
+  before_action :correct_student,     only: [:edit, :update]
   def index
     @students = Student.all
   end
@@ -31,6 +33,8 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
     if @student.update_attributes(student_params)
+      flash[:success] = "学生情報を変更しました"
+      redirect_to @student
     else
       render 'edit'
     end
@@ -40,5 +44,17 @@ class StudentsController < ApplicationController
 
     def student_params
       params.require(:student).permit(:name, :s_class, :s_code, :s_no, :password, :image)
+    end
+
+    def logged_in_student
+      unless logged_in?
+        flash[:danger] = "ログインが必要です。"
+        redirect_to login_url
+      end
+    end
+
+    def correct_student
+      @student = Student.find(params[:id])
+      redirect_to(root_url) unless current_student?(@student)
     end
 end
