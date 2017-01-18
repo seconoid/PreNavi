@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   before_action :logged_in_student, only: [:edit, :update]
   before_action :correct_student,     only: [:edit, :update]
   def index
-    @students = Student.all
+    @students = Student.paginate(page: params[:page])
   end
 
   def show

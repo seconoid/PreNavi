@@ -1,6 +1,8 @@
 <% provide(:title, '学生一覧') %>
 <h1>学生一覧</h1>
 
+<%= will_paginate %>
+
 <ul class="students">
   <% @students.each do |student| %>
     <li>
@@ -9,3 +11,5 @@
     </li>
   <% end %>
 </ul>
+
+<%= will_paginate %>
