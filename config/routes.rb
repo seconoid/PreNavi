@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :users
   root to: 'home#index'
   get 'signup' => 'students#new'
   get 'login' => 'sessions#new'
@@ -15,5 +17,4 @@ Rails.application.routes.draw do
   resources :products
   resources :favorites, only: [:destroy]
   resource :client
-  resources :users
 end
