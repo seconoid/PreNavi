@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170120032004) do
     t.string   "c_name",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "client_id"
+    t.integer  "user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20170120032004) do
     t.integer  "s_no",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "student_id"
+    t.integer  "user_id"
     t.index ["s_code"], name: "index_students_on_s_code", unique: true
   end
 
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20170120032004) do
     t.string   "password_digest", null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "user_attr"
+    t.integer  "user_attr",       null: false
   end
 
 end
