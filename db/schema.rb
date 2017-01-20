@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112012005) do
+ActiveRecord::Schema.define(version: 20170120025356) do
 
   create_table "clients", force: :cascade do |t|
-    t.string   "name",            null: false
-    t.string   "email",           null: false
-    t.string   "password_digest", null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "c_id",       null: false
+    t.string   "c_name",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "client_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -41,15 +41,21 @@ ActiveRecord::Schema.define(version: 20170112012005) do
   end
 
   create_table "students", force: :cascade do |t|
+    t.string   "s_class",    null: false
+    t.integer  "s_code",     null: false
+    t.integer  "s_no",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "student_id"
+    t.index ["s_code"], name: "index_students_on_s_code", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string   "name",            null: false
-    t.string   "s_class",         null: false
-    t.integer  "s_code",          null: false
-    t.integer  "s_no",            null: false
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "image"
-    t.string   "password_digest"
-    t.index ["s_code"], name: "index_students_on_s_code", unique: true
   end
 
 end
