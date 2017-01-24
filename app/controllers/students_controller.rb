@@ -15,14 +15,13 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_params)
+    @student = Student.new(params[:user])
     @student.s_class = @student.s_class.upcase
     if @student.save
       log_in @student
       flash[:success] = "Prenaviにようこそ！"
       redirect_to @student
     else
-      render 'new'
     end
   end
 
@@ -43,7 +42,6 @@ class StudentsController < ApplicationController
   private
 
     def student_params
-      params.require(:student).permit(:name, :s_class, :s_code, :s_no, :password, :image)
     end
 
     def logged_in_student

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one :student
+  accepts_nested_attributes_for :student
   has_one :client
-  has_secure_password
+  accepts_nested_attributes_for :client
 end
