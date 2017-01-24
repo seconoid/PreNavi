@@ -5,6 +5,6 @@
   <h2>
     就職プレゼンテーションをすごくするよ。
   </h2>
-  <%= link_to "企業側新規登録", client_signup_path, class:  "btn btn-lg btn-primary" %>
-  <%= link_to "学生側新規登録", student_signup_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "企業側新規登録", signup_path(attr: 'client'), class:  "btn btn-lg btn-primary" %>
+  <%= link_to "学生側新規登録", signup_path(attr: 'student'), class: "btn btn-lg btn-primary" %>
 </div>
