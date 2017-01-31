@@ -1,22 +1,22 @@
 module SessionsHelper
   def log_in(user)
-    session[:student_id] = student.id
+    session[:user_id] = user.id
   end
 
-  def current_student?(student)
-    student == current_student
+  def current_user?(user)
+    user == current_user
   end
 
-  def current_student
-    @current_student ||= Student.find_by(id: session[:student_id])
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 
   def logged_in?
-    !current_student.nil?
+    !current_user.nil?
   end
 
   def log_out
-    session.delete(:student_id)
-    @current_student = nil
+    session.delete(:user_id)
+    @current_user = nil
   end
 end

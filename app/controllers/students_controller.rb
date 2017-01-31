@@ -7,6 +7,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @user = User.find(@student[:user_id])
     @product = Product.where("student_id = ?", @student)
   end
 

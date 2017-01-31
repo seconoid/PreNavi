@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   get 'students' => 'students#index'
-  get 'profile' => 'clients#show'
+  get 'profile' => 'users#show'
+  get 'profile/edit' => 'users#edit'
+  post 'profile/edit' => 'users#update'
   resources :students do
     member do
       post "add", to: "favorites#create"

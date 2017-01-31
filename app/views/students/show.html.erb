@@ -1,10 +1,10 @@
-<% provide(:title, @student.name) %>
+<% provide(:title, @user.name) %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1 class="">
-        <%= image_tag @student.image.thumb.url, :class => "profile_img" %>
-        <%= @student.name %>
+        <%= image_tag @user.image.thumb.url, :class => "profile_img" %>
+        <%= @user.name %>
       </h1>
       <p>
         学籍番号：<%= @student.s_class %>

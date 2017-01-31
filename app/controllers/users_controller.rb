@@ -9,22 +9,29 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def create
-    @user = User.new(user_params)
+    case params[:user][:user_attr]
+    when "1"
+      @user = User.new(student_params)
+    when "2"
+      @user = User.new(client_params)
+    end
+
     if @user.save
       log_in @user
       flash[:success] = "Prenaviにようこそ！"
-      redirect_to @user
+
+      redirect_to profile_path
     else
       render 'new'
     end
   end
 
   private
-    def user_params
+    def student_params
       params.require(:user).permit(
         :name,
         :email,
@@ -34,7 +41,20 @@ class UsersController < ApplicationController
         student_attributes: [
           :s_class,
           :s_code,
-          :s_no,
+          :s_no
+        ])
+    end
+
+    def client_params
+      params.require(:user).permit(
+        :name,
+        :email,
+        :password,
+        :image,
+        :user_attr,
+        client_attributes: [
+          :c_id,
+          :c_name
         ])
     end
 end
