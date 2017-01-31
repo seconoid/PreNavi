@@ -1,4 +1,10 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <h1><%= @user.name %></h1>
+  <% if @student %>
+    <%= render partial: "student", locals: {student: @student} %>
+  <% end %>
+  <% if @client %>
+    <%= render partial: "client", locals: {client: @client} %>
+  <% end %>
 </div>
