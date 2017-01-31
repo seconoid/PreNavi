@@ -7,40 +7,49 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# student seeds
+# student seed
 name = "中山暁登"
+email = "akito@example.com"
 s_class = "IH13A296"
 s_code = 40595
 s_no = 27
 password = "mogemoge"
 image = open("#{Rails.root}/public/icon_default.png")
-Student.create!(
+user_attr = 1
+User.create!(
   name: name,
-  s_class: s_class,
-  s_code: s_code,
-  s_no: s_no,
+  email: email,
   password: password,
-  image: image
-)
-
-30.times do |n|
-  name = Faker::Name.name
-  s_class = "XX99X999"
-  s_code = 90000 + n
-  s_no = 99
-  password = "foobar"
-  image = open("#{Rails.root}/public/icon_default.png")
-  Student.create!(
-    name: name,
+  image: image,
+  student_attributes: {
     s_class: s_class,
     s_code: s_code,
-    s_no: s_no,
-    password: password,
-    image: image
-  )
-end
+    s_no: s_no
+  },
+  user_attr: user_attr
+)
 
-# product seeds
+# client seed
+name = "熊谷基継"
+email = "kumamoto@example.com"
+c_id = "hal_tokyo"
+c_name = "HAL東京"
+password = "kumakuma"
+image = open("#{Rails.root}/public/icon_default.png")
+user_attr = 2
+User.create!(
+  name: name,
+  email: email,
+  password: password,
+  image: image,
+  client_attributes: {
+    c_id: c_id,
+    c_name: c_name
+  },
+  user_attr: user_attr
+)
+
+# product seed
 Product.create!(
   student_id: 1,
   name: "Prenavi",
@@ -48,17 +57,52 @@ Product.create!(
   url: "http://localhost:3000"
 )
 
-# client seeds
-10.times do |n|
+# student fakers
+30.times do |n|
   name = Faker::Name.name
-  email = "hogehoge@example.com"
-  password = "mogemoge"
-  Client.create!(
-    name: name,
-    email: email,
-    password: password)
+  email = Faker::Internet.email
+  s_class = "XX99X999"
+  s_code = 90000 + n
+  s_no = 99
+  password = "foobar"
+  image = open("#{Rails.root}/public/icon_default.png")
+  user_attr = 1
+  User.create!(
+  name: name,
+  email: email,
+  password: password,
+  image: image,
+  student_attributes: {
+    s_class: s_class,
+    s_code: s_code,
+    s_no: s_no
+  },
+  user_attr: user_attr
+)
 end
 
-# favorite seeds
-Favorite.create!(student_id: 1, client_id: 1)
-Favorite.create!(student_id: 2, client_id: 1)
+# client fakers
+10.times do |n|
+  name = Faker::Name.name
+  email = Faker::Internet.email
+  c_id = "hal_tokyo"
+  c_name = "HAL東京"
+  password = "foobar"
+  image = open("#{Rails.root}/public/icon_default.png")
+  user_attr = 2
+  User.create!(
+  name: name,
+  email: email,
+  password: password,
+  image: image,
+  client_attributes: {
+    c_id: c_id,
+    c_name: c_name
+  },
+  user_attr: user_attr
+)
+end
+
+# # favorite seeds
+# Favorite.create!(student_id: 1, client_id: 1)
+# Favorite.create!(student_id: 2, client_id: 1)

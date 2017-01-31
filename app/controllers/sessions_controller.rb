@@ -3,11 +3,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    student = Student.find_by(s_code: params[:session][:s_code].to_i)
-    if student && student.authenticate(params[:session][:password])
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
       flash[:info] = 'ログインしました。'
-      log_in student
-      redirect_to student
+      log_in user
+      redirect_to profile_path
     else
       flash.now[:danger] = 'おや？なにかがおかしいです。'
       render 'new'
