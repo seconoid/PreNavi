@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   end
   resources :products
   resources :favorites, only: [:destroy]
-  resource :client
+  resources :clients
   resources :users
 end

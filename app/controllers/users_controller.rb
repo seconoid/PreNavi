@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-    @user.build_student
+    if params[:attr] == 'student'
+      @user.build_student
+    else
+      @user.build_client
+    end
   end
 
   def show
