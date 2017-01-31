@@ -3,24 +3,23 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for :user do |f| %>
-      <%= f.hidden_field :user_attr, :value => 1 %>
-
+    <%= form_for(@user) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-controle' %>
 
       <%= f.label :email %>
       <%= f.text_field :email, class: 'form-controle' %>
 
-      <%= f.fields_for :student do |sf| %>
-        <%= sf.label :s_class %>
-        <%= sf.text_field :s_class, class: 'form-controle' %>
-
-        <%= sf.label :s_code %>
-        <%= sf.text_field :s_code, class: 'form-controle' %>
-
-        <%= sf.label :s_no %>
-        <%= sf.text_field :s_no, class: 'form-controle' %>
+      <% if params[:attr] == 'student' %>
+        <%= f.hidden_field :user_attr, :value => 1 %>
+        <%= f.fields_for :student, @user.student do |sf| %>
+          <%= render partial: "form_student", locals: {sf: sf} %>
+        <% end %>
+      <% else %>
+        <%= f.hidden_field :user_attr, :value => 2 %>
+        <%= f.fields_for :client, @user.client do |cf| %>
+          <%= render partial: "form_client", locals: {cf: cf} %>
+        <% end %>
       <% end %>
 
       <%= f.label :password %>

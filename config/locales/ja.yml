@@ -2,20 +2,23 @@
 ja:
   activerecord:
     models:
+      user: ユーザ
       student: 学生
       client: 企業
     attributes:
-      student:
-        name: 名前
-        s_class: クラス記号
-        s_code: 学籍番号
-        s_no: 出席番号
-        password: パスワード
-      client:
+      user:
         name: 名前
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワードの確認
+      student:
+        name:
+        s_class: クラス記号
+        s_code: 学籍番号
+        s_no: 出席番号
+      client:
+        c_id: 企業ID
+        c_name: 企業名
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

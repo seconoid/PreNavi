@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  get 'signup' => 'students#new'
+  get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   get 'students' => 'students#index'
-  get 'signup_client' => 'clients#new'
-  get 'profile' => 'clients#show'
+  get 'profile' => 'users#show'
+  get 'profile/edit' => 'users#edit'
+  post 'profile/edit' => 'users#update'
   resources :students do
     member do
       post "add", to: "favorites#create"
@@ -14,5 +15,6 @@ Rails.application.routes.draw do
   end
   resources :products
   resources :favorites, only: [:destroy]
-  resource :client
+  resources :clients
+  resources :users
 end
