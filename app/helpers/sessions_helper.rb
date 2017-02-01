@@ -27,5 +27,4 @@ module SessionsHelper
   def  student?
     !current_user.student.nil?
   end
-
 end

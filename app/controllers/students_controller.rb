@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @user = User.find(@student[:user_id])
     @product = Product.where("student_id = ?", @student)
+    @favorite = Favorite.find_by(client_id: current_user.client.id, student_id: params[:id])
   end
 
   def new

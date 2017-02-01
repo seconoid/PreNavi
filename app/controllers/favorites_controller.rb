@@ -5,14 +5,15 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new(student_id: @student.id, client_id: @client.id)
     if @favorite.save
       flash[:info] = 'お気に入り登録しました。'
-      redirect_to @student
+      redirect_to :back
     end
   end
 
   def destroy
     @favorite = Favorite.find(params[:id])
     if @favorite.destroy
-      redirect_to client_path(session[:id])
+      flash[:info] = 'お気に入りを解除しました。'
+      redirect_to :back
     end
   end
 end

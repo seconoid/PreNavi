@@ -17,7 +17,11 @@
       </p>
       <% if client? %>
       <p>
-        <%= link_to "お気に入り登録", add_student_path(@student), method: :post %>
+        <% if !@favorite %>
+          <%= link_to "お気に入り登録", add_student_path(@student), method: :post %>
+        <%else %>
+          <%= link_to "お気に入り解除",favorite_path(@favorite), method: :delete %>
+        <% end %>
       </p>
       <% end %>
     </section>
