@@ -1,3 +1,8 @@
 <p>企業名： <%= @client.c_name %></p>
 <h2>お気に入り学生</h2>
+<% client.students.each do |student| %>
+  <tr>
+    <td><%= link_to student.user.name, student %></td>
+  </tr>
+<% end %>
 <h2>評価した学生</h2>
