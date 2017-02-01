@@ -4,6 +4,7 @@ class FavoritesController < ApplicationController
     @student = Student.find(params[:id])
     @favorite = Favorite.new(student_id: @student.id, client_id: @client.id)
     if @favorite.save
+      flash[:info] = 'お気に入り登録しました。'
       redirect_to @student
     end
   end
