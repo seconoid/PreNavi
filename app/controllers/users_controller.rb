@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
     @student ||= @user.student
     @client ||= @user.client
+    @favorites = Favorite.where("client_id = ?", @client)
   end
 
   def create
