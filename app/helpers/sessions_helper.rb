@@ -19,4 +19,13 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def client?
+    !current_user.client.nil?
+  end
+
+  def  student?
+    !current_user.student.nil?
+  end
+
 end
