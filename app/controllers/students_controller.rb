@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @user = User.find(@student[:user_id])
     @product = Product.find_by(student_id: @student.id)
-    if logged_in?
+    if client?
       @favorite = Favorite.find_by(client_id: current_user.client.id, student_id: params[:id])
     end
   end

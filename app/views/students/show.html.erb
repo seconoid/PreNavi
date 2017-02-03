@@ -15,6 +15,9 @@
       <p>
         出席番号：<%= @student.s_no %>
       </p>
+      <p>
+        スキル：<% @student.skill_list.each do |skill| %><%= skill %><% end %>
+      </p>
       <% if client? %>
       <p>
         <% if !@favorite %>
