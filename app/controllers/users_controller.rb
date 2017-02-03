@@ -33,6 +33,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+  end
+
+  def update
+    @user = User.find(session[:user_id])
+    if(@user.user_attr == 1)
+      user_params = student_params
+    else
+      user_params = client_params
+    end
+
+    if @user.update_attributes(user_params)
+      flash[:success] = "プロフィールを更新しました。"
+      redirect_to profile_path
+    else
+      render 'edit'
+    end
+  end
+
   private
     def student_params
       params.require(:user).permit(
