@@ -1,38 +1,20 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1 class="">
-        <%= image_tag @user.image.thumb.url, :class => "profile_img" %>
-        <%= @user.name %>
-      </h1>
-      <p>
-        学籍番号：<%= @student.s_class %>
-      </p>
-      <p>
-        クラス記号：<%= @student.s_code %>
-      </p>
-      <p>
-        出席番号：<%= @student.s_no %>
-      </p>
-      <% if client? %>
-      <p>
-        <% if !@favorite %>
-          <%= link_to "お気に入り登録", add_student_path(@student), method: :post %>
-        <%else %>
-          <%= link_to "お気に入り解除",favorite_path(@favorite), method: :delete %>
-        <% end %>
-      </p>
-      <% end %>
-    </section>
-    <section class="work">
-      <h2>自己紹介</h2>
-      <h2>作品情報</h2>
-      <p>
-        <%= link_to @product.name, product_path(@product) %>
-      </p>
-    </section>
-    <section class="access">
-    </section>
-  </aside>
+
+<div class="content">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="user-info">
+        <h2 class="user-image">
+          <%= image_tag(@user.image.url, :size  => "180x180") %>
+        </h2>
+        <ul class="user-basic-info">
+          <li class="user-name"><%= @user.name %></li>
+          <%= render partial: "users/student", locals: {student: @student} %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <%= render partial: "users/student_detail", locals: {student: @student} %>
+    </div>
+  </div>
 </div>

@@ -21,10 +21,10 @@ module SessionsHelper
   end
 
   def client?
-    !current_user.client.nil?
+    !current_user.client.nil? if current_user
   end
 
   def  student?
-    !current_user.student.nil?
+    !current_user.student.nil? if current_user
   end
 end

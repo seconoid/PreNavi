@@ -1,3 +1,14 @@
-<p>学生</p>
-<h2>プロフィール</h2>
-<h2>評価してきた企業</h2>
+<li><%= @student.s_class %> </li>
+<li>学籍番号： <%= @student.s_code %></li>
+<li>出席番号： <%= @student.s_no %></li>
+
+<div class="tags">
+  <% @student.skill_list.each do |skill| %>
+    <div class="tag skill"><%= skill %></div>
+  <% end %>
+  <!-- should coding -->
+  <div class="tag personality">リーダー</div>
+  <div class="tag personality">クール</div>
+  <div class="tag personality">かっこいい</div>
+  <div class="tag personality">かわいい</div>
+</div>

@@ -1,18 +1,20 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1 class="">
-        <%= @client.c_name %>
-      </h1>
-    </section>
-    <section class="work">
-      <h2>お気に入り学生一覧</h2>
-      <% @client.students.each do |student|  %>
-        <p><%= link_to student.name, student_path(student) %></p>
-      <% end %>
-    </section>
-    <section class="access">
-    </section>
-  </aside>
+
+<div class="content">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="user-info">
+        <h2 class="user-image">
+          <%= image_tag(@user.image.url, :size  => "180x180") %>
+        </h2>
+        <ul class="user-basic-info">
+          <li class="user-name"><%= @user.name %></li>
+          <%= render partial: "users/client", locals: {client: @client} %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <%= render partial: "users/client_detail", locals: {student: @student} %>
+    </div>
+  </div>
 </div>

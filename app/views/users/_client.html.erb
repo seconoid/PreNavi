@@ -1,8 +1,16 @@
-<p>企業名： <%= @client.c_name %></p>
-<h2>お気に入り学生</h2>
-<% client.students.each do |student| %>
-  <tr>
-    <td><%= link_to student.user.name, student %></td>
-  </tr>
-<% end %>
-<h2>評価した学生</h2>
+<li><%= @client.c_name %> </li>
+<li>@<%= @client.c_id %></li>
+
+<div class="tags">
+  <!-- should coding -->
+  <div class="tag skill">ruby</div>
+  <div class="tag skill">java</div>
+  <div class="tag skill">html</div>
+  <div class="tag skill">css</div>
+  <div class="tag system">完全週休２日</div>
+  <div class="tag system">即内定</div>
+  <div class="tag system">ボーナスあり</div>
+  <div class="tag system">年収５００万</div>
+  <div class="tag system">君がほしい</div>
+  <div class="tag system">部活制度あり</div>
+</div>

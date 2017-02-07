@@ -16,6 +16,7 @@ gem 'jbuilder'
 gem 'faker'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'acts-as-taggable-on'
 gem 'sdoc', group: :doc
 
 group :development, :test do
