@@ -103,6 +103,30 @@ end
 )
 end
 
-# # favorite seeds
-# Favorite.create!(student_id: 1, client_id: 1)
-# Favorite.create!(student_id: 2, client_id: 1)
+# favorite seeds
+Favorite.create!(student_id: 1, client_id: 1)
+Favorite.create!(student_id: 2, client_id: 1)
+
+# appeal seeds
+Appeal.create!(
+  user_id: 1,
+  caption: "基本情報",
+  body: "HAL東京高度情報処理学科３年の中山暁登と申します。
+              Webサービス開発が好きで、JavaやRailsを中心として開発を行っています。
+              性格はご覧の通り明るく、リーダーとして活動することも多いです。
+              能動的なでもあり、自分から企画を立ち上げて実行することも多いです。"
+)
+Appeal.create!(
+  user_id: 1,
+  caption: "作品・実績",
+  body: "プレナビ
+              自撮リンピック
+              winroader"
+)
+Appeal.create!(
+  user_id: 1,
+  caption: "やりたい仕事",
+  body:"Webサービス開発・運用
+             サービスのスタートアップ
+             プロダクトマネージャ"
+)
