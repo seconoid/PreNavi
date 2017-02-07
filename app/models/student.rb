@@ -3,5 +3,5 @@ class Student < ApplicationRecord
   has_one :product
   has_many :favorites
   has_many :clients, through: :favorites
-  acts_as_taggable_on :skills
+  acts_as_taggable_on :skills, :personalities
 end
