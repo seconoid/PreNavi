@@ -22,6 +22,9 @@
       <% if @student %>
         <%= render partial: "student_detail", locals: {student: @student} %>
       <% end %>
+      <% if @client %>
+        <%= render partial: "client_profile", locals: {student: @student} %>
+      <% end %>
     </div>
   </div>
 </div>
