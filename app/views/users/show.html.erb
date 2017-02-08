@@ -20,7 +20,7 @@
     </div>
     <div class="col-sm-9">
       <% if @student %>
-        <%= render partial: "student_detail", locals: {student: @student} %>
+        <%= render partial: "student_detail", locals: {appeals: @user.appeals} %>
       <% end %>
       <% if @client %>
         <%= render partial: "client_profile", locals: {student: @student} %>
