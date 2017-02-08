@@ -67,7 +67,7 @@ class UsersController < ApplicationController
           :s_class,
           :s_code,
           :s_no
-        ])
+        ],)
     end
 
     def client_params

@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_one :client
   accepts_nested_attributes_for :client
   has_many :appeals, dependent: :destroy
+  accepts_nested_attributes_for :appeals
 
   #validation
   before_save { self.email = email.downcase }

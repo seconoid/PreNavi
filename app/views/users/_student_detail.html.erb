@@ -1,10 +1,8 @@
 <div class="user-detail">
-  <% if !appeals.empty? %>
-    <% appeals.each do |appeal| %>
-      <div class="box">
-        <h2><%= appeal.caption %></h2>
-        <p><%= simple_format(appeal.body) %></p>
-      </div>
-    <% end %>
+  <% appeals.each do |appeal| %>
+    <div class="box">
+      <h2><%= appeal.caption %></h2>
+      <p><%= simple_format(appeal.body) %></p>
+    </div>
   <% end %>
 </div>
