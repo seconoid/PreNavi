@@ -5,23 +5,15 @@ class AppealsController < ApplicationController
   end
 
   def create
-    @appeal = Appeal.new(appeal_params)
-    if @appeal.save
-      redirect_to root
-    else
-      redirect_to root
+    params[:appeals].each do |param|
+      @appeal = Appeal.new(param.permit(:user_id, :caption, :body))
+      @appeal.save
     end
+    flash[:success] = "プロフィールを更新しました。"
+    redirect_to profile_path
   end
 
   def  edit
   end
 
-  private
-    def appeal_params
-      params.require(:appeal).permit(
-        :user_id,
-        :caption,
-        :body
-        )
-    end
 end
