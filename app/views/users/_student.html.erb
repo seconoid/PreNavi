@@ -3,12 +3,13 @@
 <li>出席番号： <%= @student.s_no %></li>
 
 <div class="tags">
+  <h3>登録タグ</h3>
+  <!-- スキルタグ -->
   <% @student.skill_list.each do |skill| %>
     <div class="tag skill"><%= skill %></div>
   <% end %>
-  <!-- should coding -->
-  <div class="tag personality">リーダー</div>
-  <div class="tag personality">クール</div>
-  <div class="tag personality">かっこいい</div>
-  <div class="tag personality">かわいい</div>
+  <!-- パーソナリティタグ -->
+  <% @student.personality_list.each do |personality| %>
+    <div class="tag personality"><%= personality %></div>
+  <% end %>
 </div>
