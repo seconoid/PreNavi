@@ -3,6 +3,18 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+  <h2>タグ編集</h2>
+    <% @student = @user.student %>
+    <%= form_for(@student) do |f| %>
+      <%= f.label :skill_list, "スキル・特技登録（カンマ区切り）" %><br>
+      <%= text_field_tag 'student[skill_list]', @student.skill_list.join(',') %>
+
+      <%= f.label :personality_list, "パーソナリティ登録" %><br>
+      <%= text_field_tag 'student[personality_list]', @student.personality_list.join(',') %>
+
+      <%= f.submit "更新", class: "btn btn-primary" %>
+    <% end %>
+  <h2>基本情報編集</h2>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
@@ -13,9 +25,6 @@
 
       <%= f.label :email %>
       <%= f.text_field :email, class: 'form-controle' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-controle' %>
 
       <%= f.label :image, "イメージ画像" %>
       <%= f.file_field :image %>

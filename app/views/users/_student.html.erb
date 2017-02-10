@@ -4,6 +4,9 @@
 
 <div class="tags">
   <h3>登録タグ</h3>
+  <% if @student == current_user.student %>
+    <div><%= link_to "タグを編集する", edit_user_path %></div>
+  <% end %>
   <!-- スキルタグ -->
   <% @student.skill_list.each do |skill| %>
     <div class="tag skill"><%= skill %></div>
