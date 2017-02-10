@@ -43,6 +43,7 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
     if(@user.user_attr == 1)
       user_params = student_params
+      binding.pry
     else
       user_params = client_params
     end
@@ -66,8 +67,9 @@ class UsersController < ApplicationController
         student_attributes: [
           :s_class,
           :s_code,
-          :s_no
-        ],)
+          :s_no,
+          :skill_list
+        ])
     end
 
     def client_params

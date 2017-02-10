@@ -1,6 +1,4 @@
 class StudentsController < ApplicationController
-  before_action :logged_in_student, only: [:edit, :update]
-  before_action :correct_student,     only: [:edit, :update]
   def index
     @students = Student.paginate(page: params[:page])
   end
@@ -36,8 +34,8 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
     if @student.update_attributes(student_params)
-      flash[:success] = "学生情報を変更しました"
-      redirect_to @student
+      flash[:success] = "タグ情報を更新しました。"
+      redirect_to profile_path
     else
       render 'edit'
     end
@@ -46,6 +44,7 @@ class StudentsController < ApplicationController
   private
 
     def student_params
+      params.require(:student).permit(:skill_list, :personality_list)
     end
 
     def logged_in_student
