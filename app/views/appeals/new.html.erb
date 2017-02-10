@@ -1,0 +1,19 @@
+<% provide(:title, "新規登録") %>
+<h1>アピール登録</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag user_appeal_path, method: :post do %>
+      <%= hidden_field_tag 'appeals[][user_id]', @user.id %>
+      <%= text_field_tag 'appeals[][caption]', "自己紹介", class: 'form-controle' %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= hidden_field_tag 'appeals[][user_id]', @user.id %>
+      <%= text_field_tag 'appeals[][caption]', "やりたい仕事", class: 'form-controle' %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= hidden_field_tag 'appeals[][user_id]', @user.id %>
+      <%= text_field_tag 'appeals[][caption]', "アピールポイント", class: 'form-controle' %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= submit_tag "登録", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
