@@ -6,7 +6,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
   # resize limit
-  process :resize_to_limit => [200, 200]
+  process :resize_to_fit => [200, 200]
 
   # we use jpg
   process :convert => 'jpg'
@@ -15,6 +15,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_fill => [100, 100, gravity = ::Magick::CenterGravity]
   end
+
+  version :profile do
+    process :resize_to_fill => [180, 180, gravity = ::Magick::CenterGravity]
+end
 
   # we accept only jpg, jpeg, gif, png
   def extension_white_list
