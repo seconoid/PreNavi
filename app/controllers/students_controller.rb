@@ -1,6 +1,13 @@
 class StudentsController < ApplicationController
   def index
-    @students = Student.paginate(page: params[:page])
+    @search = Student.search(params[:q])
+    @students = @search.result
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @topics}
+    end
+    # @students = Student.paginate(page: params[:page])
   end
 
   def show
