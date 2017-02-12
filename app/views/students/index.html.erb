@@ -3,13 +3,23 @@
 <%= search_form_for @search do |f| %>
   <%= f.label :name, '名前' %>
   <%= f.text_field :user_name_cont %>
+
+  <%= f.label :skill, 'スキル' %>
+  <%= f.text_field :skills_name_cont %>
+
+  <%= f.label :personality, 'パーソナリティ' %>
+  <%= f.text_field :personalities_name_cont %>
   <div>
     <%= f.submit '検索する' %>
   </div>
+
 <% end %>
 
+<%= will_paginate @students %>
 
 <ul class="students">
   <%= render @students %>
 </ul>
+
+<%= will_paginate @students %>
 
