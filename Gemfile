@@ -18,6 +18,8 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'acts-as-taggable-on'
 gem 'bootstrap-tagsinput-rails'
+gem 'rails-i18n'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'sdoc', group: :doc
 
 group :development, :test do
