@@ -19,9 +19,19 @@ class ClientsController < ApplicationController
     end
   end
 
+  def update
+    @client = Client.find(params[:id])
+    if @client.update_attributes(client_params)
+      flash[:success] = "タグ情報を更新しました。"
+      redirect_to profile_path
+    else
+      render 'edit'
+    end
+  end
+
   private
 
     def client_params
-      params.require(:client).permit(:name, :email, :password)
+      params.require(:client).permit(:skill_list, :system_list)
     end
 end

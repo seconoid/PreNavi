@@ -22,6 +22,15 @@
         <%= f.fields_for :client, @user.client do |cf| %>
           <%= render partial: "form_client", locals: {cf: cf} %>
         <% end %>
+
+        <%= f.label :skill_list, "欲しいスキル(カンマ区切りで複数登録)" %>
+        <%= text_field_tag "user[client_attributes][skill_list]", @user.client.skill_list.join(',') %>
+        <div>
+          おすすめのスキル:
+          <% Student.skill_counts.most_used(7).each do |skill| %>
+            <%= skill %>
+          <% end %>
+        </div>
       <% end %>
 
       <%= f.label :password %>
