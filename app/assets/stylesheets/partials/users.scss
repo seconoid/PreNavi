@@ -44,6 +44,13 @@ $sub-text: #acacac;
       margin: 20px 0;
       .tag {
         @include tag;
+        a:link {
+          text-decoration: none;
+          color: #fff;
+        }
+        a:visited {
+          color: #fff;
+        }
       }
       .skill {
         background-color: #039be5;

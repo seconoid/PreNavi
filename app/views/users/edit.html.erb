@@ -25,11 +25,13 @@
       <%= f.label :skill_list, "欲しいスキル（カンマ区切り）" %><br>
       <%= text_field_tag 'client[skill_list]', @client.skill_list.join(',') %>
       <div>
-          おすすめのスキル:
-          <% Student.skill_counts.most_used(7).each do |skill| %>
-            <%= skill %>
-          <% end %>
-        </div>
+        おすすめのスキル:
+        <% Student.skill_counts.most_used(7).each do |skill| %>
+          <%= skill %>
+        <% end %>
+      </div>
+      <%= f.label :skill_list, "企業風土" %><br>
+      <%= text_field_tag 'client[system_list]', @client.system_list.join(',') %>
       <%= f.submit "更新", class: "btn btn-primary" %>
     <% end %>
   <% end %>

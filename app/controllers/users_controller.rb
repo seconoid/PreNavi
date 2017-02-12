@@ -29,8 +29,6 @@ class UsersController < ApplicationController
       log_in @user
       flash[:success] = "Prenaviにようこそ！"
 
-      binding.pry
-
       redirect_to profile_path
     else
       render 'new'
@@ -84,7 +82,8 @@ class UsersController < ApplicationController
         client_attributes: [
           :c_id,
           :c_name,
-          :skill_list
+          :skill_list,
+          :system_list
         ])
     end
 end

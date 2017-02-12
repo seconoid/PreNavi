@@ -12,4 +12,10 @@
       <%= link_to skill, :controller => "students", :action => "index", q: {skills_name_cont: skill} %>
     </div>
   <% end %>
+  <!-- 企業風土タグ -->
+  <% @client.system_list.each do |system| %>
+    <div class="tag system">
+      <%= system %>
+    </div>
+  <% end %>
 </div>

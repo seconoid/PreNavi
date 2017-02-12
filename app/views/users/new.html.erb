@@ -26,9 +26,18 @@
         <%= f.label :skill_list, "欲しいスキル(カンマ区切りで複数登録)" %>
         <%= text_field_tag "user[client_attributes][skill_list]", @user.client.skill_list.join(',') %>
         <div>
-          おすすめのスキル:
+          おすすめスキル:
           <% Student.skill_counts.most_used(7).each do |skill| %>
             <%= skill %>
+          <% end %>
+        </div>
+
+        <%= f.label :system_list, "企業風土" %>
+        <%= text_field_tag "user[client_attributes][system_list]", @user.client.system_list.join(',') %>
+        <div>
+          最近登録されたタグ:
+          <% Client.system_counts[0, 7].reverse.each do |system| %>
+            <%= system %>
           <% end %>
         </div>
       <% end %>
