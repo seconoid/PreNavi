@@ -126,6 +126,45 @@ User.create!(
   user_attr: user_attr
 )
 
+name = "吉田感"
+email = "sassu-@example.com"
+s_class = "IH13A296"
+s_code = 40167
+s_no = 40
+password = "sasusasu"
+image = open("#{Rails.root}/public/shimohigashi.jpg")
+user_attr = 1
+User.create!(
+  name: name,
+  email: email,
+  password: password,
+  image: image,
+  student_attributes: {
+    s_class: s_class,
+    s_code: s_code,
+    s_no: s_no
+  },
+  appeals_attributes: [
+    {
+      caption: "自己紹介",
+      body: "高度情報処理学科３年の吉田感です。
+                  ゲームにはまったら力尽きるまでやります。
+                  サメを釣ったことがあります。"
+    },
+    {
+      caption: "取得資格",
+      body: "基本情報
+                  応用情報"
+    },
+    {
+      caption: "趣味",
+      body: "釣り
+                  デイトレード"
+    },
+  ],
+  user_attr: user_attr
+)
+
 # client seed
 name = "熊谷基継"
 email = "kumamoto@example.com"

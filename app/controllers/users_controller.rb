@@ -70,7 +70,8 @@ class UsersController < ApplicationController
           :s_class,
           :s_code,
           :s_no,
-          :skill_list
+          :skill_list,
+          :personality_list
         ])
     end
 
@@ -85,7 +86,8 @@ class UsersController < ApplicationController
           :c_id,
           :c_name,
           :skill_list,
-          :system_list
+          :system_list,
+          :personality_list
         ])
     end
 end
