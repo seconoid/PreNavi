@@ -24,7 +24,9 @@ User.create!(
   student_attributes: {
     s_class: s_class,
     s_code: s_code,
-    s_no: s_no
+    s_no: s_no,
+    skill_list: "java,ruby,UX",
+    personality_list: "リーダータイプ,明るい,笑顔が素敵,かわいい"
   },
   appeals_attributes: [
     {
@@ -66,12 +68,16 @@ User.create!(
   student_attributes: {
     s_class: s_class,
     s_code: s_code,
-    s_no: s_no
+    s_no: s_no,
+    skill_list: "PHP,javascript,DJ",
+    personality_list: "魚類,黒い"
+
   },
   appeals_attributes: [
     {
       caption: "基本情報",
-      body: "HAL東京３年熊倉直樹です。"
+      body: "HAL東京３年熊倉直樹です。
+                  騒ぐタイプです。"
     },
     {
       caption: "作品・実績",
@@ -79,8 +85,10 @@ User.create!(
                   ポートフォリオ"
     },
     {
-      caption: "スキル",
-      body:"ｊｓ"
+      caption: "アルバイト・インターン経験",
+      body: "房'ｓ（居酒屋 １年 ホール）
+                  株式会社LIG(１ヶ月 Web開発)
+                  株式会社nanofun(2ヶ月 Web開発 勤続中"
     }
   ],
   user_attr: user_attr
@@ -102,7 +110,9 @@ User.create!(
   student_attributes: {
     s_class: s_class,
     s_code: s_code,
-    s_no: s_no
+    s_no: s_no,
+    skill_list: "iphoneアプリ,swfit,PHP",
+    personality_list: "イケメン,かっこいい,おしゃれ"
   },
   appeals_attributes: [
     {
@@ -142,7 +152,9 @@ User.create!(
   student_attributes: {
     s_class: s_class,
     s_code: s_code,
-    s_no: s_no
+    s_no: s_no,
+    skill_list: "Androidアプリ,java,Unity,VR",
+    personality_list: "元消防士,落ち着いている,高身長"
   },
   appeals_attributes: [
     {
@@ -160,6 +172,39 @@ User.create!(
       caption: "趣味",
       body: "釣り
                   デイトレード"
+    },
+  ],
+  user_attr: user_attr
+)
+
+name = "勝又裕太"
+email = "katsumata@example.com"
+s_class = "IH13A296"
+s_code = 40453
+s_no = 10
+password = "sasusasu"
+image = open("#{Rails.root}/public/shimohigashi.jpg")
+user_attr = 1
+User.create!(
+  name: name,
+  email: email,
+  password: password,
+  image: image,
+  student_attributes: {
+    s_class: s_class,
+    s_code: s_code,
+    s_no: s_no,
+    skill_list: "Androidアプリ,java,Linux,ネットワーク,LOL",
+    personality_list: "落ち着いている,めがね,ゲーマー"
+  },
+  appeals_attributes: [
+    {
+      caption: "自己紹介",
+      body: "勝又です。"
+    },
+    {
+      caption: "取得資格",
+      body: "基本情報"
     },
   ],
   user_attr: user_attr

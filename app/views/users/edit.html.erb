@@ -2,7 +2,7 @@
 <h1>個人情報変更</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 user-form">
   <h2>タグ編集</h2>
   <!-- student -->
   <% if student? %>
@@ -23,14 +23,24 @@
     <% @client = @user.client %>
     <%= form_for(@client) do |f| %>
       <%= f.label :skill_list, "欲しいスキル（カンマ区切り）" %><br>
-      <%= text_field_tag 'client[skill_list]', @client.skill_list.join(',') %>
-      <div>
+      <div class="recommend">
         おすすめのスキル:
         <% Student.skill_counts.most_used(7).each do |skill| %>
           <%= skill %>
         <% end %>
       </div>
-      <%= f.label :skill_list, "企業風土" %><br>
+      <%= text_field_tag 'client[skill_list]', @client.skill_list.join(',') %>
+
+      <%= f.label :personality_list, "求む性格（カンマ区切り）" %><br>
+      <div class="recommend">
+        企業に人気のあるパーソナリティ:
+        <% Client.personality_counts.most_used(7).each do |personality| %>
+          <%= personality %>
+        <% end %>
+      </div>
+      <%= text_field_tag 'client[personality_list]', @client.personality_list.join(',') %>
+
+      <%= f.label :skill_list, "企業風土（カンマ区切り）" %><br>
       <%= text_field_tag 'client[system_list]', @client.system_list.join(',') %>
       <%= f.submit "更新", class: "btn btn-primary" %>
     <% end %>

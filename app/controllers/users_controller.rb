@@ -15,7 +15,9 @@ class UsersController < ApplicationController
     if @client
       @favorites = Favorite.where("client_id = ?", @client.id)
       @skill = @client.skill_list.shuffle.first
-      @recommends = Student.search(skills_name_cont: @skill).result(distinct: true).shuffle
+      @personality = @client.personality_list.shuffle.first
+      @skill_recommends = Student.search(skills_name_cont: @skill).result(distinct: true).shuffle
+      @personality_recommends = Student.search(personalities_name_cont: @personality).result(distinct: true).shuffle
     end
   end
 

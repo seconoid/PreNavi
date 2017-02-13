@@ -18,7 +18,7 @@ $sub-text: #acacac;
   margin: 5px 7px 5px 0;
 }
 
-.user-new {
+.user-form {
   .recommend {
     color: #1276cc;
   }
@@ -120,12 +120,11 @@ $sub-text: #acacac;
     border-bottom: solid 1px #cacaca;
     margin: 15px 10px;
   }
-  ul {
-    padding: 0;
-    margin: 20px;
-  }
   li {
     margin: 8px 0;
     list-style: none;
+  }
+  p {
+    margin: 20px;
   }
 }

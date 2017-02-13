@@ -32,6 +32,6 @@ class ClientsController < ApplicationController
   private
 
     def client_params
-      params.require(:client).permit(:skill_list, :system_list)
+      params.require(:client).permit(:skill_list, :system_list, :personality_list)
     end
 end
