@@ -73,7 +73,8 @@ class UsersController < ApplicationController
           :s_code,
           :s_no,
           :skill_list,
-          :personality_list
+          :personality_list,
+          :exhibit_code
         ])
     end
 
