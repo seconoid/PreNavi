@@ -5,22 +5,22 @@
   <%= f.text_field :user_name_cont %>
 
   <%= f.label :skill, 'スキル' %>
-  <%= f.text_field :skills_name_cont %>
   <div class="popular">
-    人気のあるスキル:
+    人気スキル:
     <% Student.skill_counts.most_used(7).each do |skill| %>
       <%= link_to skill, :controller => "students", :action => "index", q: {skills_name_cont: skill.name} %>
     <% end %>
   </div>
+  <%= f.text_field :skills_name_cont %>
 
   <%= f.label :personality, 'パーソナリティ' %>
-  <%= f.text_field :personalities_name_cont %>
   <div class="popular">
-    人気のあるパーソナリティ:
+    人気パーソナリティ:
     <% Student.personality_counts.most_used(7).each do |personality| %>
-      <%= link_to personality, :controller => "students", :action => "index", q: {personalities_name_cont: personality.name} %>
+      <%= link_to personality, {:controller => "students", :action => "index"}, q: {personalities_name_cont: personality.name} %>
     <% end %>
   </div>
+  <%= f.text_field :personalities_name_cont %>
   <div>
     <%= f.submit '検索する', class: "btn btn-primary"%>
   </div>

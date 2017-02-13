@@ -29,4 +29,8 @@ end
     super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
   end
 
+  def default_url
+    "/images/fallback/" + [version_name, "default.jpg"].compact.join('_')
+  end
+
 end

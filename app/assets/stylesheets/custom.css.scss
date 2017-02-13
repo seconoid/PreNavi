@@ -39,6 +39,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  clear: both;
 }
 
 h1 {
@@ -114,7 +115,7 @@ footer ul li {
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 20px !important;
   @include box_sizing;
 }
 

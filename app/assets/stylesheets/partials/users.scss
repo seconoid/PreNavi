@@ -11,11 +11,17 @@ $sub-text: #acacac;
 @mixin tag {
   font-size: 15px;
   float: left;
-  margin-right: 5px;
-  padding: 0 5px;
+  margin-right: 3px;
+  padding: 1px 5px;
   border-radius: 2px;
   color: #fdfdfd;
   margin: 5px 7px 5px 0;
+}
+
+.user-form {
+  .recommend {
+    color: #1276cc;
+  }
 }
 
 .user-info {
@@ -40,23 +46,34 @@ $sub-text: #acacac;
       font-size: 24px;
       margin: 10px 0;
     }
-    .tags {
-      margin: 20px 0;
-      .tag {
-        @include tag;
-      }
-      .skill {
-        background-color: #039be5;
-      }
-      .personality {
-        background-color: #fbc02d;
-      }
-      .system {
-        background-color: #9ccc65;
-      }
-    }
   }
 }
+
+.tags {
+  clear: both;
+  padding: 20px 0;
+}
+
+.tag {
+  @include tag;
+  a:link {
+    text-decoration: none;
+    color: #fff;
+  }
+  a:visited {
+    color: #fff;
+  }
+}
+.skill {
+  background-color: #039be5;
+}
+.personality {
+  background-color: #fbc02d;
+}
+.system {
+  background-color: #9ccc65;
+}
+
 .user-detail {
   .box {
     margin-bottom: 30px;
@@ -87,6 +104,9 @@ $sub-text: #acacac;
   .box {
     margin-bottom: 30px;
     @include item-box;
+    .students {
+      margin: 20px 10px;
+    }
   }
   h2 {
     color: #efefef;
@@ -95,12 +115,21 @@ $sub-text: #acacac;
     padding: 5px 8px;
     background-color: #8f8f8f;
   }
-  ul {
-    padding: 0;
-    margin: 20px;
+  h3 {
+    font-size: 14px;
+    color: #3a3a3a;
+    border-bottom: solid 1px #cacaca;
+    margin: 15px 10px;
   }
   li {
     margin: 8px 0;
     list-style: none;
   }
+  p {
+    margin: 20px;
+  }
+}
+
+.not-float-tag {
+  float: none;
 }

@@ -1,18 +1,50 @@
 <div class="client-profile">
+  <div class="box favorites">
+    <h2>お気に入り学生</h2>
+      <% if !@favorites.empty? %>
+      <p class="notfound">
+        お気に入りの学生を探してみましょう！<br>
+        <%= link_to "学生検索ページへ", students_path %>
+      </p>
+      <% else %>
+      <div class="row students">
+        <% @favorites.each do |fav| %>
+          <div class="col-xs-2">
+            <% student = fav.student %>
+            <div class="img"><%= link_to image_tag(student.user.image.thumb.url, size:70), student %></div>
+            <span class="name"><%= link_to student.user.name, student %></span>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <div class="box recommend">
     <h2>おすすめの学生</h2>
-    <ul>
-      <li>あきと</li>
-      <li>なかやま</li>
-      <li>あきとくん</li>
-    </ul>
-  </div>
-  <div class="box log">
-    <h2>もう一度見る</h2>
-    <ul>
-      <li>あきと</li>
-      <li>なかやま</li>
-      <li>あきとくん</li>
-    </ul>
+    <% if @skill.nil? %>
+      <p><%= link_to "気になるスキルを設定して、学生を探しやすくしましょう！", edit_user_path %></p>
+    <% else %>
+      <h3>タグ情報：<%= @skill %>に基づくおすすめ</h3>
+      <div class="row students">
+        <% @skill_recommends.each do |student| %>
+          <div class="col-xs-2">
+            <div class="img"><%= link_to image_tag(student.user.image.thumb.url, size:70), student %></div>
+            <span class="name"><%= link_to student.user.name, student %></span>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @personality.nil? %>
+      <p><%= link_to "気になるパーソナリティを設定して、学生を探しやすくしましょう！", edit_user_path %></p>
+    <% else %>
+      <h3>タグ情報：<%= @personality %>に基づくおすすめ</h3>
+      <div class="row students">
+        <% @personality_recommends.each do |student| %>
+          <div class="col-xs-2">
+            <div class="img"><%= link_to image_tag(student.user.image.thumb.url, size:70), student %></div>
+            <span class="name"><%= link_to student.user.name, student %></span>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

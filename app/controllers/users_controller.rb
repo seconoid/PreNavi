@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     @client ||= @user.client
     if @client
       @favorites = Favorite.where("client_id = ?", @client.id)
+      @skill = @client.skill_list.shuffle.first
+      @personality = @client.personality_list.shuffle.first
+      @skill_recommends = Student.search(skills_name_cont: @skill).result(distinct: true).shuffle
+      @personality_recommends = Student.search(personalities_name_cont: @personality).result(distinct: true).shuffle
     end
   end
 
@@ -68,7 +72,8 @@ class UsersController < ApplicationController
           :s_class,
           :s_code,
           :s_no,
-          :skill_list
+          :skill_list,
+          :personality_list
         ])
     end
 
@@ -81,7 +86,10 @@ class UsersController < ApplicationController
         :user_attr,
         client_attributes: [
           :c_id,
-          :c_name
+          :c_name,
+          :skill_list,
+          :system_list,
+          :personality_list
         ])
     end
 end
