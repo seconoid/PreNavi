@@ -1,17 +1,53 @@
 <% provide(:title, "新規登録") %>
-<h1>アピール登録</h1>
+<h1>フリーアピール登録</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_tag user_appeal_path, method: :post do %>
       <%= hidden_field_tag 'appeals[][user_id]', @user.id %>
-      <%= text_field_tag 'appeals[][caption]', "自己紹介", class: 'form-controle' %>
-      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= label :caption, "アピール項目①" %>
+      <%= text_field_tag 'appeals[][caption]', "", class: 'form-controle', placeholder: "例：自己紹介, 基本情報" %>
+      <%= label :body, "アピール内容" %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle', placeholder: "高度情報処理学科3年の春野です。この時のために3年力をためました。よろしくお願いします。" %>
       <%= hidden_field_tag 'appeals[][user_id]', @user.id %>
-      <%= text_field_tag 'appeals[][caption]', "やりたい仕事", class: 'form-controle' %>
-      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= label :caption, "アピール項目②" %>
+      <%= text_field_tag 'appeals[][caption]', "", class: 'form-controle', placeholder: "例：やりたい仕事、学校で経験したこと" %>
+      <%= label :body, "アピール内容" %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle', placeholder:"a
+b
+c" %>
       <%= hidden_field_tag 'appeals[][user_id]', @user.id %>
-      <%= text_field_tag 'appeals[][caption]', "アピールポイント", class: 'form-controle' %>
+      <%= label :caption, "アピール項目③" %>
+      <%= text_field_tag 'appeals[][caption]', "", class: 'form-controle', placeholder: "例：趣味" %>
+      <%= label :body, "アピール内容" %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= label :caption, "アピール項目④" %>
+      <%= text_field_tag 'appeals[][caption]', "", class: 'form-controle', placeholder: "アルバイト・インターン経験" %>
+      <%= label :body, "アピール内容" %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= label :caption, "アピール項目⑤" %>
+      <%= text_field_tag 'appeals[][caption]', "", class: 'form-controle', placeholder: "恋愛経験" %>
+      <%= label :body, "アピール内容" %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= label :caption, "アピール項目⑥" %>
+      <%= text_field_tag 'appeals[][caption]', "", class: 'form-controle', placeholder: "所有スキル" %>
+      <%= label :body, "アピール内容" %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= label :caption, "アピール項目⑦" %>
+      <%= text_field_tag 'appeals[][caption]', "", class: 'form-controle', placeholder: "取得資格一覧" %>
+      <%= label :body, "アピール内容" %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= label :caption, "アピール項目⑧" %>
+      <%= text_field_tag 'appeals[][caption]', "", class: 'form-controle', placeholder: "旅行先一覧" %>
+      <%= label :body, "アピール内容" %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= label :caption, "アピール項目⑨" %>
+      <%= text_field_tag 'appeals[][caption]', "", class: 'form-controle', placeholder: "誰にも言えない秘密" %>
+      <%= label :body, "アピール内容" %>
+      <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
+      <%= label :caption, "アピール項目⑩" %>
+      <%= text_field_tag 'appeals[][caption]', "", class: 'form-controle', placeholder: "好きな○○○優" %>
+      <%= label :body, "アピール内容" %>
       <%= text_area_tag 'appeals[][body]', "", rows: 5, class: 'form-controle' %>
       <%= submit_tag "登録", class: 'btn btn-primary' %>
     <% end %>
