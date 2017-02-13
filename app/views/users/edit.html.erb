@@ -22,7 +22,7 @@
   <% if client? %>
     <% @client = @user.client %>
     <%= form_for(@client) do |f| %>
-      <%= f.label :skill_list, "欲しいスキル（カンマ区切り）" %><br>
+      <%= f.label :skill_list, "気になるスキル（カンマ区切り）" %><br>
       <div class="recommend">
         おすすめのスキル:
         <% Student.skill_counts.most_used(7).each do |skill| %>
@@ -31,10 +31,10 @@
       </div>
       <%= text_field_tag 'client[skill_list]', @client.skill_list.join(',') %>
 
-      <%= f.label :personality_list, "求む性格（カンマ区切り）" %><br>
+      <%= f.label :personality_list, "気になるパーソナリティ（カンマ区切り）" %><br>
       <div class="recommend">
-        企業に人気のあるパーソナリティ:
-        <% Client.personality_counts.most_used(7).each do |personality| %>
+        おすすめパーソナリティ:
+        <% Student.personality_counts.most_used(7).each do |personality| %>
           <%= personality %>
         <% end %>
       </div>
