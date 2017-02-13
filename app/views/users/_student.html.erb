@@ -1,7 +1,15 @@
 <li><%= @student.s_class %> </li>
 <li>学籍番号： <%= @student.s_code %></li>
 <li>出席番号： <%= @student.s_no %></li>
-
+<% if client? %>
+    <div class="favorite">
+      <% unless @favorite %>
+        <%= link_to "お気に入り登録する", add_student_path(student), method: :post %>
+      <% else %>
+        <%= link_to "お気に入りを解除する", favorite_path(@favorite), method: :delete %>
+      <% end %>
+    </div>
+  <% end %>
 <div class="tags">
   <h3>登録タグ</h3>
   <% if @student == current_user.student %>
