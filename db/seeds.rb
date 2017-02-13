@@ -195,17 +195,73 @@ User.create!(
     s_code: s_code,
     s_no: s_no,
     skill_list: "Androidアプリ,java,Linux,ネットワーク,LOL",
-    personality_list: "落ち着いている,めがね,ゲーマー"
+    personality_list: "落ち着いている,スポーツ観戦,ゲーマー"
   },
   appeals_attributes: [
     {
       caption: "自己紹介",
-      body: "勝又です。"
+      body: "勝又です。インフラに興味があります。"
     },
     {
       caption: "取得資格",
       body: "基本情報"
     },
+    {
+      caption: "趣味",
+      body: "スポーツ観戦（バスケ、サッカー、アメフト、卓球など）
+                  ネットゲーム(LOLなど）"
+    },
+    {
+      caption: "信条",
+      body: "自分に嘘をつかない"
+    },
+    {
+      caption: "特技",
+      body: "名前を覚える
+                  タイピング"
+    }
+  ],
+  user_attr: user_attr
+)
+
+name = "中里光利"
+email = "nakasato@example.com"
+s_class = "IH13A296"
+s_code = 40170
+s_no = 26
+password = "nakasato"
+image = open("#{Rails.root}/public/shimohigashi.jpg")
+user_attr = 1
+User.create!(
+  name: name,
+  email: email,
+  password: password,
+  image: image,
+  student_attributes: {
+    s_class: s_class,
+    s_code: s_code,
+    s_no: s_no,
+    skill_list: "java,javascript,python",
+    personality_list: "出席率高い,PCゲーマー,"
+  },
+  appeals_attributes: [
+    {
+      caption: "自己紹介",
+      body: "勝又です。インフラに興味があります。"
+    },
+    {
+      caption: "取得資格",
+      body: "基本情報"
+    },
+    {
+      caption: "趣味",
+      body: "スポーツ観戦（バスケ、サッカー、アメフト、卓球など）
+                  ネットゲーム(LOLなど）"
+    },
+    {
+      caption: "信条",
+      body: "嘘をつかない"
+    }
   ],
   user_attr: user_attr
 )
