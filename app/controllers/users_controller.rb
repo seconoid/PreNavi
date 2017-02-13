@@ -14,6 +14,8 @@ class UsersController < ApplicationController
     @client ||= @user.client
     if @client
       @favorites = Favorite.where("client_id = ?", @client.id)
+      @skill = @client.skill_list.shuffle.first
+      @recommends = Student.search(skills_name_cont: @skill).result(distinct: true).shuffle
     end
   end
 

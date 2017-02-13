@@ -1,14 +1,28 @@
 <div class="client-profile">
+  <% if !@favorites.empty? %>
+    <div class="box favorites">
+      <h2>お気に入り学生</h2>
+      <div class="row students">
+        <% @favorites.each do |fav| %>
+          <div class="col-xs-2">
+            <% student = fav.student %>
+            <div class="img"><%= link_to image_tag(student.user.image.thumb.url, size:70), student %></div>
+            <span class="name"><%= link_to student.user.name, student %></span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
   <div class="box recommend">
-    <h2>お気に入り済みの学生</h2>
-    <ul>
-
-    </ul>
     <h2>おすすめの学生</h2>
+    <h3>タグ情報：<%= @skill %>に基づくおすすめ</h3>
     <ul>
-      <li>あきと</li>
-      <li>なかやま</li>
-      <li>あきとくん</li>
+      <% @recommends.each do |student| %>
+        <div class="col-xs-2">
+          <div class="img"><%= link_to image_tag(student.user.image.thumb.url, size:70), student %></div>
+          <span class="name"><%= link_to student.user.name, student %></span>
+        </div>
+      <% end %>
     </ul>
   </div>
   <div class="box log">

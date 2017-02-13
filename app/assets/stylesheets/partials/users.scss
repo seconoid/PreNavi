@@ -94,6 +94,9 @@ $sub-text: #acacac;
   .box {
     margin-bottom: 30px;
     @include item-box;
+    .students {
+      margin: 20px 10px;
+    }
   }
   h2 {
     color: #efefef;
@@ -101,6 +104,12 @@ $sub-text: #acacac;
     margin: 0;
     padding: 5px 8px;
     background-color: #8f8f8f;
+  }
+  h3 {
+    font-size: 14px;
+    color: #3a3a3a;
+    border-bottom: solid 1px #cacaca;
+    margin: 15px 10px;
   }
   ul {
     padding: 0;
