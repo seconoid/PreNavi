@@ -13,4 +13,23 @@ class AppealsController < ApplicationController
     redirect_to profile_path
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+    @appeals = @user.appeals
+  end
+
+  def update
+    @appeals = appeals_params.map do |id, appeal_param|
+      appeal = Appeal.find(id)
+      appeal.update_attributes(appeal_param)
+      appeal
+    end
+    redirect_to profile_path
+  end
+
+  private
+    def appeals_params
+      params.permit(appeals: [:caption, :body])[:appeals]
+    end
+
 end

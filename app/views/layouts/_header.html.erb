@@ -13,6 +13,9 @@
             <ul class="dropdown-menu">
               <li><%= link_to "プロフィール", profile_path %></li>
               <li><%= link_to "設定", profile_edit_path %></li>
+              <% if student? %>
+                <li><%= link_to "フリーアピール編集", edit_user_appeal_path %></li>
+              <% end %>
               <li class="divider"></li>
               <li><%= link_to "ログアウト", logout_path, method: "delete" %></li>
             </ul>

@@ -1,8 +1,17 @@
 <div class="user-detail">
-  <% appeals.each do |appeal| %>
+  <% if appeals.empty? %>
     <div class="box">
-      <h2><%= appeal.caption %></h2>
-      <p><%= simple_format(appeal.body) %></p>
+      <p>
+        まだプロフィールが充実していません。<br>
+        <%= link_to "自分をもっとアピールしてみましょう！", new_user_appeal_path %>
+      </p>
     </div>
+  <% else %>
+    <% appeals.each do |appeal| %>
+      <div class="box">
+        <h2><%= appeal.caption %></h2>
+        <p><%= simple_format(appeal.body) %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>
