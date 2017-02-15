@@ -32,18 +32,9 @@ $sub-text: #7c7c7c;
   border: 1px solid #4682b4;
 }
 
-.tags {
-  margin-top: 20px;
-  padding: 0 16px 8px;
-  background-color: rgba(255,255,255,0.7);
-  border-radius: 5px;
-  border: 1px solid #4682b4;
-  h3 {
-    margin: 10px 0;
-  }
-}
-
 .user-info {
+  margin: 0 auto;
+  width: 200px;
   img {
     border: 3px solid #dadada;
     border-radius: 1px;
@@ -51,8 +42,6 @@ $sub-text: #7c7c7c;
   h2 {
     margin: 0;
   }
-  margin: 0 auto;
-  width: 200px;
   .user-image {
     text-align: center;
   }
@@ -80,6 +69,16 @@ $sub-text: #7c7c7c;
   }
   a:visited {
     color: #fff;
+  }
+}
+.tags {
+  margin-top: 20px;
+  padding: 0 16px 8px;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 5px;
+  border: 1px solid #4682b4;
+  h3 {
+    margin: 10px 0;
   }
 }
 .skill {
@@ -168,4 +167,50 @@ $sub-text: #7c7c7c;
 
 .form-sub-mes {
   text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  .user-info {
+    width: auto;
+  }
+  .user-image {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    img {
+      width: 110px;
+      height: 110px;
+    }
+  }
+  ul {
+    display: inline-block;
+    width: 45%;
+    margin-left: 20px;
+    margin-bottom: 0;
+  }
+  li {
+    margin: 3px 0 !important;
+    font-size: 12px !important;
+  }
+  li.user-name {
+    font-size: 20px !important;
+    margin-top: 0 !important;
+  }
+
+  .tags {
+    h3 {
+      display: inline-block;
+      margin-bottom: 2px !important;
+    }
+    .to_edit {
+      display: inline-block;
+    }
+  }
+  .tag {
+    margin: 2px 0;
+  }
+
+  .user-detail {
+    margin: 20px 0;
+  }
 }
