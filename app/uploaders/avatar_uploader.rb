@@ -1,6 +1,4 @@
-# encoding: utf-8
-
-class ImageUploader < CarrierWave::Uploader::Base
+class AvatarUploader < CarrierWave::Uploader::Base
 
   # to risize and convert file type
   include Cloudinary::CarrierWave
@@ -32,4 +30,9 @@ end
   def default_url
     "/images/fallback/" + [version_name, "default.jpg"].compact.join('_')
   end
+
+  def public_id
+    return model.id user.id
+  end
+
 end

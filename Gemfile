@@ -20,6 +20,8 @@ gem 'acts-as-taggable-on'
 gem 'bootstrap-tagsinput-rails'
 gem 'rails-i18n'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'cloudinary'
+gem 'heroku'
 gem 'sdoc', group: :doc
 
 group :development, :test do

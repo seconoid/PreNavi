@@ -13,7 +13,7 @@ email = "akito@example.com"
 s_class = "IH13A296"
 s_code = 40595
 s_no = 27
-exhibit_code = "IH011"
+exhibit_code = "IT011"
 password = "mogemoge"
 image = open("#{Rails.root}/public/akito.jpg")
 user_attr = 1
@@ -102,7 +102,7 @@ email = "shimopro@example.com"
 s_class = "IH13A296"
 s_code = 40345
 s_no = 21
-exhibit_code = "IH045"
+exhibit_code = "IT045"
 password = "shimoshimo"
 image = open("#{Rails.root}/public/shimohigashi.jpg")
 user_attr = 1
@@ -146,7 +146,7 @@ email = "sassu-@example.com"
 s_class = "IH13A296"
 s_code = 40167
 s_no = 40
-exhibit_code = "IH014"
+exhibit_code = "IT014"
 password = "sasusasu"
 image = open("#{Rails.root}/public/shimohigashi.jpg")
 user_attr = 1
@@ -189,6 +189,7 @@ email = "katsumata@example.com"
 s_class = "IH13A296"
 s_code = 40453
 s_no = 10
+exhibit_code = "IT014"
 password = "sasusasu"
 image = open("#{Rails.root}/public/shimohigashi.jpg")
 user_attr = 1
@@ -201,6 +202,7 @@ User.create!(
     s_class: s_class,
     s_code: s_code,
     s_no: s_no,
+    exhibit_code: exhibit_code,
     skill_list: "Androidアプリ,java,Linux,ネットワーク,LOL",
     personality_list: "落ち着いている,スポーツ観戦,ゲーマー"
   },
@@ -236,6 +238,7 @@ email = "nakasato@example.com"
 s_class = "IH13A296"
 s_code = 40170
 s_no = 26
+exhibit_code = "IT010"
 password = "nakasato"
 image = open("#{Rails.root}/public/shimohigashi.jpg")
 user_attr = 1
@@ -249,6 +252,7 @@ User.create!(
     s_code: s_code,
     s_no: s_no,
     skill_list: "java,javascript,python",
+    exhibit_code: exhibit_code,
     personality_list: "出席率高い,PCゲーマー,"
   },
   appeals_attributes: [
@@ -346,6 +350,13 @@ end
   user_attr: user_attr
 )
 end
+
+#room
+Room.create!(
+  no: 31,
+  col: 24,
+  row: 10
+)
 
 # favorite seeds
 Favorite.create!(student_id: 1, client_id: 1)

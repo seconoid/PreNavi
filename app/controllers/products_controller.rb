@@ -5,12 +5,12 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @student = User.find(session[:user_id]).student
     @product = Product.new
   end
 
   def create
     @product = Product.new(product_params)
-    @product.student_id = session[:student_id]
     if @product.save
       log_in @product
       flash[:success] = "作品登録を行いました。"
@@ -27,6 +27,6 @@ class ProductsController < ApplicationController
   private
 
     def product_params
-      params.require(:product).permit(:student_id, :name, :about)
+      params.require(:product).permit(:student_id, :name, :about, :image)
     end
 end

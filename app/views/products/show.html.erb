@@ -9,12 +9,17 @@
         <%= @product.about %>
       </p>
       <p>
+        <br>
+        アピールポイント<br>
+        <%= @product.appeal %>
+      </p>
+      <p>
         サイトURL<br>
         <%= link_to @product.url, @product.url %><br>
       </p>
       <p>
         作った人<br>
-        <%= link_to @student.name, student_path(@student) %>
+        <%= link_to @student.user.name, student_path(@student) %>
     </section>
   </aside>
 </div>
