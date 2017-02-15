@@ -27,3 +27,13 @@
   display: inline-block;
   max-width: 750px;
 }
+
+@media screen and (max-width: 768px) {
+  .students {
+    width: 100%;
+    padding: 0;
+    .tag {
+      font-size: 12px
+    }
+  }
+}

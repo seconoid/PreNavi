@@ -162,4 +162,11 @@ input {
     margin: 0;
     padding: 20px
   }
+
+  input {
+    margin-bottom: 10px !important;
+  }
+  label {
+    margin-bottom: 0 !important;
+  }
 }
