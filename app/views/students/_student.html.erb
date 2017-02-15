@@ -1,10 +1,12 @@
 <li>
-  <%= link_to image_tag(student.user.image.url(:thumb), :size  => "70x70"), student %>
-  <%= link_to student.user.name, student %>
-  <% student.skill_list.each do |skill| %>
-    <span class="tag skill not-float-tag"%><%= skill %></span>
-  <% end %>
-  <% student.personality_list.each do |personality| %>
-    <span class="tag personality not-float-tag"%><%= personality %></span>
-  <% end %>
+  <div class="item"><%= link_to image_tag(student.user.image.url(:thumb), :size  => "70x70"), student %></div>
+  <div class="item"><%= link_to student.exhibit_code, student %><br><%= link_to student.user.name, student %></div>
+  <div class="item">
+    <% student.skill_list.each do |skill| %>
+      <span class="tag skill not-float-tag"%><%= skill %></span>
+    <% end %>
+    <% student.personality_list.each do |personality| %>
+      <span class="tag personality not-float-tag"%><%= personality %></span>
+    <% end %>
+  </div>
 </li>
