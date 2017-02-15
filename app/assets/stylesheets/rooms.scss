@@ -5,7 +5,7 @@
 #room {
   overflow: scroll;
   .map {
-    margin: 40px;
+    margin: 40px 20px 10px 20px;
     ul {
       width: 1800px;
       font-size: 0;
@@ -15,15 +15,29 @@
     }
     li {
       display: inline-block;
-      width: 70px;
-      height: 50px;
+      width: 60px;
+      height: 40px;
       font-size: 12px;
       letter-spacing: normal;
       vertical-align: top;
     }
   }
-  .box {
+  .exist-box {
+    background-color: #e6e6e6;
+    border: 1px solid #1a1a1a;
+  }
+  .none-box {
     background-color: #fff;
-    border: 1px solid #000;
+  }
+  .code {
+    height: 33%;
+    text-align: center;
+    background-color: #cc000a;
+    color: #fff;
+  }
+  .student {
+    height: 67%;
+    text-align: center;
+    background-color: #fff;
   }
 }

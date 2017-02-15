@@ -1,4 +1,5 @@
 <% provide(:title, "部屋情報") %>
+<h1><%= @room.no %>階</h1>
 <div id="room">
   <div class="map">
     <% row =@room.row %>
@@ -7,20 +8,24 @@
       <ul>
         <% for j in 0...col %>
           <% pos_info =  info_at_position(@positions, j, i) %>
-          <% if pos_info %>
-            <li class="box exist">
-              <span>
-              <% student = Student.find_by(exhibit_code: pos_info[:exhibit_code]) %>
-              <%= pos_info[:exhibit_code] %><br>
-              <% if student %>
-                <%= student.user.name %>
+            <% if pos_info %>
+              <li class="exist-box">
+              <% if pos_info[:exhibit_code] == "none" %>
+              <% else %>
+                <% student = Student.find_by(exhibit_code: pos_info[:exhibit_code]) %>
+                <div class="code">
+                  <%= pos_info[:exhibit_code] %>
+                </div>
+                <div class="student">
+                  <% if student %>
+                    <%= link_to student.user.name, student%>
+                  <% end %>
+                </div>
               <% end %>
-              </span>
             </li>
           <% else %>
             <li class="box none"></li>
           <% end %>
-          </li>
         <% end %>
       </ul>
     <% end %>

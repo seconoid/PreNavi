@@ -21,8 +21,18 @@ class RoomsController < ApplicationController
     if no == 31
       json = [
         {
+          exhibit_code: "none",
+          x: 0,
+          y: 0
+        },
+        {
           exhibit_code: "IT050",
           x: 1,
+          y: 0
+        },
+        {
+          exhibit_code: "none",
+          x: 2,
           y: 0
         },
         {
@@ -36,6 +46,11 @@ class RoomsController < ApplicationController
           y: 0
         },
         {
+          exhibit_code: "none",
+          x: 5,
+          y: 0
+        },
+        {
           exhibit_code: "IT010",
           x: 6,
           y: 0
@@ -43,6 +58,11 @@ class RoomsController < ApplicationController
         {
           exhibit_code: "IT011",
           x: 7,
+          y: 0
+        },
+        {
+          exhibit_code: "none",
+          x: 8,
           y: 0
         },
         {
@@ -56,6 +76,11 @@ class RoomsController < ApplicationController
           y: 0
         },
         {
+          exhibit_code: "none",
+          x: 11,
+          y: 0
+        },
+        {
           exhibit_code: "IT101",
           x: 12,
           y: 0
@@ -63,6 +88,11 @@ class RoomsController < ApplicationController
         {
           exhibit_code: "IT102",
           x: 13,
+          y: 0
+        },
+        {
+          exhibit_code: "none",
+          x: 14,
           y: 0
         },
         {
@@ -76,6 +106,11 @@ class RoomsController < ApplicationController
           y: 0
         },
         {
+          exhibit_code: "none",
+          x: 17,
+          y: 0
+        },
+        {
           exhibit_code: "IT108",
           x: 18,
           y: 0
@@ -86,6 +121,11 @@ class RoomsController < ApplicationController
           y: 0
         },
         {
+          exhibit_code: "none",
+          x: 20,
+          y: 0
+        },
+        {
           exhibit_code: "IT110",
           x: 21,
           y: 0
@@ -93,6 +133,11 @@ class RoomsController < ApplicationController
         {
           exhibit_code: "IT111",
           x: 22,
+          y: 0
+        },
+        {
+          exhibit_code: "none",
+          x: 23,
           y: 0
         },
         {
@@ -146,6 +191,31 @@ class RoomsController < ApplicationController
           y: 2
         },
         {
+          exhibit_code: "none",
+          x: 0,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 6,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 12,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 18,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 23,
+          y: 3
+        },
+        {
           exhibit_code: "IT144",
           x: 0,
           y: 4
@@ -196,6 +266,11 @@ class RoomsController < ApplicationController
           y: 5
         },
         {
+          exhibit_code: "none",
+          x: 0,
+          y: 6
+        },
+        {
           exhibit_code: "IT043",
           x: 4,
           y: 6
@@ -226,8 +301,23 @@ class RoomsController < ApplicationController
           y: 6
         },
         {
+          exhibit_code: "none",
+          x: 23,
+          y: 6
+        },
+        {
           exhibit_code: "IT142",
           x: 0,
+          y: 7
+        },
+        {
+          exhibit_code: "none",
+          x: 5,
+          y: 7
+        },
+        {
+          exhibit_code: "none",
+          x: 11,
           y: 7
         },
         {
