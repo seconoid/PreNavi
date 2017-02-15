@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resource :user, :path => :profile,  shallow: true do
     resource :appeal
   end
+  resources :rooms
 end
