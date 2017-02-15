@@ -13,12 +13,12 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # create thumbnail
   version :thumb do
-    process :resize_to_fill => [100, 100, gravity = ::Magick::CenterGravity]
+    process :resize_to_fill => [100, 100]
   end
 
   version :profile do
-    process :resize_to_fill => [180, 180, gravity = ::Magick::CenterGravity]
-end
+    process :resize_to_fill => [180, 180]
+  end
 
   # we accept only jpg, jpeg, gif, png
   def extension_white_list
