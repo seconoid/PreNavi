@@ -1,0 +1,67 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#room {
+  overflow: scroll;
+  border: 2px solid #3a3a3a;
+  .map {
+    margin: 20px 20px 10px 20px;
+    padding: 10px;
+    ul {
+      width: 1500px;
+      font-size: 0;
+      padding: 0;
+      margin: 0;
+      letter-spacing: -0.4em;
+      word-spacing: 0.1em;
+    }
+    li {
+      display: inline-block;
+      width: 60px;
+      height: 40px;
+      font-size: 12px;
+      letter-spacing: normal;
+      vertical-align: top;
+    }
+  }
+  .exist-box {
+    background-color: #e6e6e6;
+    border: 1px solid #1a1a1a;
+  }
+  .none-box {
+    background-color: #fff;
+  }
+  .code {
+    height: 33%;
+    text-align: center;
+    background-color: #cc000a;
+    color: #fff;
+  }
+  .student {
+    height: 67%;
+    text-align: center;
+    background-color: #fff;
+  }
+  .doorway {
+    font-size: 18px;
+    width: 1500px;
+  }
+  .door {
+    display: inline-block;
+    width: 200px;
+    height: 30%;
+    border-radius: 3px;
+    background-color: #4387e9;
+
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+  }
+  .enter {
+    margin-left: 70px;
+  }
+  .exit {
+    margin-left: 900px;
+  }
+}

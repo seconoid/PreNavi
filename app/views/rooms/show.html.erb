@@ -1,0 +1,37 @@
+<% provide(:title, "部屋情報") %>
+<h1><%= @room.no %>階</h1>
+<div id="room">
+  <div class="map">
+    <% row =@room.row %>
+    <% col = @room.col %>
+    <% for i in 0...row %>
+      <ul>
+        <% for j in 0...col %>
+          <% pos_info =  info_at_position(@positions, j, i) %>
+            <% if pos_info %>
+              <li class="exist-box">
+              <% if pos_info[:exhibit_code] == "none" %>
+              <% else %>
+                <% student = Student.find_by(exhibit_code: pos_info[:exhibit_code]) %>
+                <div class="code">
+                  <%= pos_info[:exhibit_code] %>
+                </div>
+                <div class="student">
+                  <% if student %>
+                    <%= link_to student.user.name, student%>
+                  <% end %>
+                </div>
+              <% end %>
+            </li>
+          <% else %>
+            <li class="box none"></li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+    <div class="doorway">
+        <span class="door enter">入り口</span>
+        <span class="door exit">出口</span>
+      </div>
+  </div>
+</div>

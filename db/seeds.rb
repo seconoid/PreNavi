@@ -13,6 +13,7 @@ email = "akito@example.com"
 s_class = "IH13A296"
 s_code = 40595
 s_no = 27
+exhibit_code = "IH011"
 password = "mogemoge"
 image = open("#{Rails.root}/public/akito.jpg")
 user_attr = 1
@@ -25,6 +26,7 @@ User.create!(
     s_class: s_class,
     s_code: s_code,
     s_no: s_no,
+    exhibit_code: exhibit_code,
     skill_list: "java,ruby,UX",
     personality_list: "リーダータイプ,明るい,笑顔が素敵,かわいい"
   },
@@ -100,6 +102,7 @@ email = "shimopro@example.com"
 s_class = "IH13A296"
 s_code = 40345
 s_no = 21
+exhibit_code = "IH045"
 password = "shimoshimo"
 image = open("#{Rails.root}/public/shimohigashi.jpg")
 user_attr = 1
@@ -112,6 +115,7 @@ User.create!(
     s_class: s_class,
     s_code: s_code,
     s_no: s_no,
+    exhibit_code: exhibit_code,
     skill_list: "iphoneアプリ,swfit,PHP",
     personality_list: "イケメン,かっこいい,おしゃれ"
   },
@@ -142,6 +146,7 @@ email = "sassu-@example.com"
 s_class = "IH13A296"
 s_code = 40167
 s_no = 40
+exhibit_code = "IH014"
 password = "sasusasu"
 image = open("#{Rails.root}/public/shimohigashi.jpg")
 user_attr = 1
@@ -154,6 +159,7 @@ User.create!(
     s_class: s_class,
     s_code: s_code,
     s_no: s_no,
+    exhibit_code: exhibit_code,
     skill_list: "Androidアプリ,java,Unity,VR",
     personality_list: "元消防士,落ち着いている,高身長"
   },
