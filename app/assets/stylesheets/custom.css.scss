@@ -76,13 +76,11 @@ p {
 /* header */
 
 #logo {
-  float: left;
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
 }
 
@@ -146,4 +144,29 @@ input {
 
 .to_edit {
   text-align: right;
+}
+
+/** for mobile **/
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 !important;
+  }
+
+  header {
+    .container {
+      padding: 0 16px !important;
+    }
+  }
+
+  .content {
+    margin: 0;
+    padding: 20px
+  }
+
+  input {
+    margin-bottom: 10px !important;
+  }
+  label {
+    margin-bottom: 0 !important;
+  }
 }
