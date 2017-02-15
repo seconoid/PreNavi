@@ -1,18 +1,31 @@
 <div class="user-detail">
+  <div class="box">
+  <h2 class="product">就職作品概要</h2>
   <% if @student.product.nil? %>
-    <div class="box">
-      <h2 class="product">就職作品概要</h2>
-        <p>
-          <%= link_to "就プレ作品を登録するとここに表示されます！", new_product_path %>
-      </p>
-    </div>
-  <% end %>
+    <p>
+      <% if @student == current_user.student %>
+        <%= link_to "就プレ作品を登録するとここに表示されます！", new_product_path %>
+      <% else %>
+        作品情報は登録されていません。
+      <% end %>
+    </p>
+    <% else %>
+      <h3><%= @student.product.name %></h3>
+      <span class="img"><%= image_tag(@user.image.url) %></span>
+      <p><%= @student.product.about %></p>
+      <p><%= link_to "作品について詳しく見る >>", @student.product %></p>
+    <% end %>
+  </div>
   <% if appeals.empty? %>
     <div class="box">
       <h2>フリーアピール欄</h2>
       <p>
-        まだプロフィールが充実していません。<br>
-        <%= link_to "自分をもっとアピールしてみましょう！", new_user_appeal_path %>
+        <% if @student == current_user.student %>
+          まだプロフィールが充実していません。<br>
+          <%= link_to "自分をもっとアピールしてみましょう！", new_user_appeal_path %>
+        <% else %>
+          アピール項目はありません。
+        <% end %>
       </p>
     </div>
   <% else %>

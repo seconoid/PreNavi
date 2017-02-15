@@ -104,6 +104,12 @@ $sub-text: #7c7c7c;
     padding: 8px;
     background-color: #4682b4;
   }
+  h3 {
+    font-size: 18px;
+    color: #3a3a3a;
+    border-bottom: solid 1px #cacaca;
+    margin: 15px 10px;
+  }
   p {
     margin: 20px;
   }
@@ -118,6 +124,11 @@ $sub-text: #7c7c7c;
   margin: 0 20px;
   .product {
     background: #cc000a;
+  }
+  img {
+    margin-left: 20px;
+    max-height: 150px;
+    border: 3px solid #6a6a6a;
   }
 }
 

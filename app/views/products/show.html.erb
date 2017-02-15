@@ -1,25 +1,32 @@
 <% provide(:title, @product.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1 class="">作品名：<%= @product.name %></h1>
-      <p>
-        <br>
-        作品紹介<br>
-        <%= @product.about %>
-      </p>
-      <p>
-        <br>
-        アピールポイント<br>
-        <%= @product.appeal %>
-      </p>
-      <p>
-        サイトURL<br>
-        <%= link_to @product.url, @product.url %><br>
-      </p>
-      <p>
-        作った人<br>
-        <%= link_to @student.user.name, student_path(@student) %>
-    </section>
-  </aside>
+<div class="content">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="product">
+        <h1>作品詳細</h1>
+        <% if @student == current_user.student %>
+          <p><%= link_to "作品情報を編集する", edit_product_path %></p>
+        <% end %>
+        <h2>作品紹介：<%= @product.name %></h2>
+        <p>
+          <br>
+          作品紹介<br>
+          <%= @product.about %>
+        </p>
+        <p>
+          <br>
+          アピールポイント<br>
+          <%= @product.appeal %>
+        </p>
+        <p>
+          サイトURL<br>
+          <%= link_to @product.url, @product.url %><br>
+        </p>
+        <p>
+          作った人<br>
+          <%= link_to @student.user.name, student_path(@student) %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

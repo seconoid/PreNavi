@@ -6,6 +6,7 @@
       <div class="user-info">
         <div class="basic-info">
           <h2 class="user-image">
+            <%= image_tag(@user.image.url, :size  => "165x165") %>
           </h2>
           <ul>
             <li class="user-name"><%= @user.name %></li>
