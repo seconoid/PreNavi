@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214014715) do
+ActiveRecord::Schema.define(version: 20170215050619) do
 
   create_table "appeals", force: :cascade do |t|
     t.string   "caption"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170214014715) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "appeal"
     t.index ["student_id"], name: "index_products_on_student_id"
   end
 

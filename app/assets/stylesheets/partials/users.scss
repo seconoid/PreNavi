@@ -2,15 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $main-text: #000;
-$sub-text: #acacac;
+$sub-text: #7c7c7c;
 @mixin item-box {
   border: 1px solid #eaeaea;
   border-radius: 3px;
   overflow: hidden;
+  background-color: #fff;
 }
 @mixin tag {
+  display: inline-block;
   font-size: 15px;
-  float: left;
   margin-right: 3px;
   padding: 1px 5px;
   border-radius: 2px;
@@ -24,34 +25,51 @@ $sub-text: #acacac;
   }
 }
 
+.basic-info {
+  padding: 8px 16px 8px;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 5px;
+  border: 1px solid #4682b4;
+}
+
+.tags {
+  margin-top: 20px;
+  padding: 0 16px 8px;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 5px;
+  border: 1px solid #4682b4;
+  h3 {
+    margin: 10px 0;
+  }
+}
+
 .user-info {
+  img {
+    border: 3px solid #dadada;
+    border-radius: 1px;
+  }
   h2 {
     margin: 0;
   }
   margin: 0 auto;
-  width: 180px;
+  width: 200px;
   .user-image {
     text-align: center;
   }
-  .user-basic-info {
+  ul {
     padding: 0;
     list-style: none;
-    li {
-      margin: 5px 0;
-      color: $sub-text;
-      font-size: 16px;
-    }
-    .user-name {
-      color: $main-text;
-      font-size: 24px;
-      margin: 10px 0;
-    }
   }
-}
-
-.tags {
-  clear: both;
-  padding: 20px 0;
+  li {
+    margin: 5px 0;
+    color: $sub-text;
+    font-size: 16px;
+  }
+  .user-name {
+    color: $main-text;
+    font-size: 24px;
+    margin: 10px 0;
+  }
 }
 
 .tag {
@@ -76,7 +94,7 @@ $sub-text: #acacac;
 
 .user-detail {
   .box {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     @include item-box;
   }
   h2 {

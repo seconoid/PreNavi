@@ -8,11 +8,23 @@
   <% if student? %>
     <% @student = @user.student %>
     <%= form_for(@student) do |f| %>
-      <%= f.label :skill_list, "スキル・特技登録（カンマ区切り）" %><br>
-      <%= text_field_tag 'student[skill_list]', @student.skill_list.join(',') %>
+      <%= f.label :skill_list, "スキル・特技登録（カンマ区切り）" %>
+      <div class="popular">
+        人気スキル:
+        <% Student.skill_counts.most_used(4).each do |skill| %>
+          <%= skill %>
+        <% end %>
+      </div>
+      <%= text_field_tag 'student[skill_list]', @student.skill_list.join(','), :placeholder => "java,PHP,ネットワーク" %>
 
-      <%= f.label :personality_list, "パーソナリティ登録" %><br>
-      <%= text_field_tag 'student[personality_list]', @student.personality_list.join(',') %>
+      <%= f.label :personality_list, "パーソナリティ登録" %><span>  > 性格などを登録できます。<br></span>
+      <div class="popular">
+        人気パーソナリティ:
+        <% Student.personality_counts.most_used(4).each do |personality| %>
+          <%= personality %>
+        <% end %>
+      </div>
+      <%= text_field_tag 'student[personality_list]', @student.personality_list.join(','), :placeholder => "出席率100%,高身長,フレンドリー,クール" %>
 
       <%= f.submit "更新", class: "btn btn-primary" %>
     <% end %>

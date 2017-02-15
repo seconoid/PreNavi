@@ -3,25 +3,11 @@
 <li>学籍番号： <%= @student.s_code %></li>
 <li>出席番号： <%= @student.s_no %></li>
 <% if client? %>
-    <div class="favorite">
-      <% unless @favorite %>
-        <%= link_to "お気に入り登録する", add_student_path(student), method: :post %>
-      <% else %>
-        <%= link_to "お気に入りを解除する", favorite_path(@favorite), method: :delete %>
-      <% end %>
-    </div>
-  <% end %>
-<div class="tags">
-  <h3>登録タグ</h3>
-  <% if @student == current_user.student %>
-    <div><%= link_to "タグを編集する", edit_user_path %></div>
-  <% end %>
-  <!-- スキルタグ -->
-  <% @student.skill_list.each do |skill| %>
-    <div class="tag skill"><%= skill %></div>
-  <% end %>
-  <!-- パーソナリティタグ -->
-  <% @student.personality_list.each do |personality| %>
-    <div class="tag personality"><%= personality %></div>
-  <% end %>
-</div>
+  <div class="favorite">
+    <% unless @favorite %>
+      <%= link_to "お気に入り登録する", add_student_path(student), method: :post %>
+    <% else %>
+      <%= link_to "お気に入りを解除する", favorite_path(@favorite), method: :delete %>
+    <% end %>
+  </div>
+<% end %>
