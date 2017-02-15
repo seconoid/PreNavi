@@ -18,7 +18,7 @@
     <div class="popular">
       人気パーソナリティ:
       <% Student.personality_counts.most_used(7).each do |personality| %>
-        <%= link_to personality, {:controller => "students", :action => "index"}, q: {personalities_name_cont: personality.name} %>
+        <%= link_to personality, :controller => "students", :action => "index", q: {personalities_name_cont: personality.name} %>
       <% end %>
     </div>
     <%= f.text_field :personalities_name_cont %>
