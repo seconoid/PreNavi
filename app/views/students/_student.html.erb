@@ -1,5 +1,5 @@
 <li>
-  <%= link_to image_tag(student.user.image.url, :size  => "70x70"), student %>
+  <%= link_to image_tag(student.user.image.url(:thumb), :size  => "70x70"), student %>
   <%= link_to student.user.name, student %>
   <% student.skill_list.each do |skill| %>
     <span class="tag skill not-float-tag"%><%= skill %></span>
