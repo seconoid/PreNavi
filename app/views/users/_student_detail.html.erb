@@ -1,6 +1,15 @@
 <div class="user-detail">
+  <% if @student.product.nil? %>
+    <div class="box">
+      <h2 class="product">就職作品概要</h2>
+        <p>
+          <%= link_to "就プレ作品を登録するとここに表示されます！", new_product_path %>
+      </p>
+    </div>
+  <% end %>
   <% if appeals.empty? %>
     <div class="box">
+      <h2>フリーアピール欄</h2>
       <p>
         まだプロフィールが充実していません。<br>
         <%= link_to "自分をもっとアピールしてみましょう！", new_user_appeal_path %>
