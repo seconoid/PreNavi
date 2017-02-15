@@ -1,27 +1,29 @@
 <% provide(:title, "作品登録") %>
-<h1>作品登録</h1>
+<div class="content">
+  <h1>作品登録</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@product) do |f| %>
-      <%= f.hidden_field :student_id, :value => @student.id %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@product) do |f| %>
+        <%= f.hidden_field :student_id, :value => @student.id %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-controle' %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-controle' %>
 
-      <%= f.label :about %>
-      <%= f.text_area :about, class: 'form-controle' %>
+        <%= f.label :about %>
+        <%= f.text_area :about, class: 'form-controle' %>
 
-      <%= f.label :appeal %>
-      <%= f.text_area :appeal, class: 'form-controle' %>
+        <%= f.label :appeal %>
+        <%= f.text_area :appeal, class: 'form-controle' %>
 
-      <%= f.label :url %>
-      <%= f.text_field :url, class: 'form-controle' %>
+        <%= f.label :url %>
+        <%= f.text_field :url, class: 'form-controle' %>
 
-      <%= f.label :image, "イメージ画像" %>
-      <%= f.file_field :image %>
+        <%= f.label :image, "イメージ画像" %>
+        <%= f.file_field :image %>
 
-      <%= f.submit "作品登録", class: "btn btn-primary" %>
-    <% end %>
+        <%= f.submit "作品登録", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>

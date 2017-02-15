@@ -1,66 +1,68 @@
 <% provide(:title, "新規登録") %>
-<h1>新規登録</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3 user-form">
-    <%= form_for @user, url: user_path do |f| %>
-      <%= render 'shared/error_messages' %>
+<div class="content">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 user-form">
+      <h1 class="center">新規登録</h1>
+      <%= form_for @user, url: user_path do |f| %>
+        <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-controle', :placeholder => "春野太郎" %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-controle', :placeholder => "春野太郎" %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-controle', :placeholder => "tokyo_hal@mail.co.jp" %>
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-controle', :placeholder => "tokyo_hal@mail.co.jp" %>
 
-      <% if params[:attr] == 'student' %>
-        <%= f.hidden_field :user_attr, :value => 1 %>
-        <%= f.fields_for :student, @user.student do |sf| %>
-          <%= render partial: "form_student", locals: {sf: sf} %>
+        <% if params[:attr] == 'student' %>
+          <%= f.hidden_field :user_attr, :value => 1 %>
+          <%= f.fields_for :student, @user.student do |sf| %>
+            <%= render partial: "form_student", locals: {sf: sf} %>
+          <% end %>
+        <% else %>
+          <%= f.hidden_field :user_attr, :value => 2 %>
+          <%= f.fields_for :client, @user.client do |cf| %>
+            <%= render partial: "form_client", locals: {cf: cf} %>
+          <% end %>
+
+          <%= f.label :skill_list, "欲しいスキル(カンマ区切りで複数登録)" %>
+          <div class="recommend">
+            おすすめスキル:
+            <% Student.skill_counts.most_used(7).each do |skill| %>
+              <%= skill %>
+            <% end %>
+          </div>
+          <%= text_field_tag "user[client_attributes][skill_list]", @user.client.skill_list.join(','), :placeholder => "java,php,android" %>
+
+          <%= f.label :skill_list, "求む性格" %>
+          <div class="recommend">
+            こんな性格の学生がいます:
+            <% Student.personality_counts.most_used(7).each do |personality| %>
+              <%= personality %>
+            <% end %>
+          </div>
+          <%= text_field_tag "user[client_attributes][personality_list]", @user.client.personality_list.join(','), :placeholder => "元気,リーダー,出席率100%" %>
+
+          <%= f.label :system_list, "企業風土" %>
+          <div class="recommend">
+            最近登録されたタグ:
+            <% Client.system_counts[0, 7].reverse.each do |system| %>
+              <%= system %>
+            <% end %>
+          </div>
+          <%= text_field_tag "user[client_attributes][system_list]", @user.client.system_list.join(','), :placeholder => "完全週休２日,オフィス綺麗,ボーナスあり"%>
         <% end %>
-      <% else %>
-        <%= f.hidden_field :user_attr, :value => 2 %>
-        <%= f.fields_for :client, @user.client do |cf| %>
-          <%= render partial: "form_client", locals: {cf: cf} %>
-        <% end %>
 
-        <%= f.label :skill_list, "欲しいスキル(カンマ区切りで複数登録)" %>
-        <div class="recommend">
-          おすすめスキル:
-          <% Student.skill_counts.most_used(7).each do |skill| %>
-            <%= skill %>
-          <% end %>
-        </div>
-        <%= text_field_tag "user[client_attributes][skill_list]", @user.client.skill_list.join(','), :placeholder => "java,php,android" %>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-controle', :placeholder => "パスワードは８文字以上です"%>
 
-        <%= f.label :skill_list, "求む性格" %>
-        <div class="recommend">
-          こんな性格の学生がいます:
-          <% Student.personality_counts.most_used(7).each do |personality| %>
-            <%= personality %>
-          <% end %>
-        </div>
-        <%= text_field_tag "user[client_attributes][personality_list]", @user.client.personality_list.join(','), :placeholder => "元気,リーダー,出席率100%" %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-controle', :placeholder => "パスワードの再入力" %>
 
-        <%= f.label :system_list, "企業風土" %>
-        <div class="recommend">
-          最近登録されたタグ:
-          <% Client.system_counts[0, 7].reverse.each do |system| %>
-            <%= system %>
-          <% end %>
-        </div>
-        <%= text_field_tag "user[client_attributes][system_list]", @user.client.system_list.join(','), :placeholder => "完全週休２日,オフィス綺麗,ボーナスあり"%>
+        <%= f.label :image, "イメージ画像" %>
+        <%= f.file_field :image %>
+
+        <%= f.submit "アカウント登録", class: "btn btn-primary" %>
       <% end %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-controle', :placeholder => "パスワードは８文字以上です"%>
-
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: 'form-controle', :placeholder => "パスワードの再入力" %>
-
-      <%= f.label :image, "イメージ画像" %>
-      <%= f.file_field :image %>
-
-      <%= f.submit "アカウント登録", class: "btn btn-primary" %>
-    <% end %>
+    </div>
   </div>
 </div>

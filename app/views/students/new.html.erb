@@ -1,38 +1,39 @@
 <% provide(:title, "新規登録") %>
 <h1>新規登録</h1>
+<div class="content">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for :user do |f| %>
+        <%= f.hidden_field :user_attr, :value => 1 %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for :user do |f| %>
-      <%= f.hidden_field :user_attr, :value => 1 %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-controle' %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-controle' %>
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-controle' %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-controle' %>
+        <%= f.fields_for :student do |sf| %>
+          <%= sf.label :s_class %>
+          <%= sf.text_field :s_class, class: 'form-controle' %>
 
-      <%= f.fields_for :student do |sf| %>
-        <%= sf.label :s_class %>
-        <%= sf.text_field :s_class, class: 'form-controle' %>
+          <%= sf.label :s_code %>
+          <%= sf.text_field :s_code, class: 'form-controle' %>
 
-        <%= sf.label :s_code %>
-        <%= sf.text_field :s_code, class: 'form-controle' %>
+          <%= sf.label :s_no %>
+          <%= sf.text_field :s_no, class: 'form-controle' %>
+        <% end %>
 
-        <%= sf.label :s_no %>
-        <%= sf.text_field :s_no, class: 'form-controle' %>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-controle' %>
+
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-controle' %>
+
+        <%= f.label :image, "イメージ画像" %>
+        <%= f.file_field :image %>
+
+        <%= f.submit "アカウント登録", class: "btn btn-primary" %>
       <% end %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-controle' %>
-
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: 'form-controle' %>
-
-      <%= f.label :image, "イメージ画像" %>
-      <%= f.file_field :image %>
-
-      <%= f.submit "アカウント登録", class: "btn btn-primary" %>
-    <% end %>
+    </div>
   </div>
 </div>
