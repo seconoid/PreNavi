@@ -1,14 +1,48 @@
-<div class="tags">
-  <h3>登録タグ</h3>
-  <% if @student == current_user.student %>
-    <div><%= link_to "タグを編集する", edit_user_path %></div>
-  <% end %>
-  <!-- スキルタグ -->
-  <% @student.skill_list.each do |skill| %>
-    <div class="tag skill"><%= skill %></div>
-  <% end %>
-  <!-- パーソナリティタグ -->
-  <% @student.personality_list.each do |personality| %>
-    <div class="tag personality"><%= personality %></div>
-  <% end %>
-</div>
+<% if student? %>
+  <div class="tags">
+    <h3>登録タグ</h3>
+      <% if @student == current_user.student %>
+        <div><%= link_to "タグを編集する", edit_user_path %></div>
+      <% end %>
+      <!-- スキルタグ -->
+      <% @student.skill_list.each do |skill| %>
+        <div class="tag skill"><%= skill %></div>
+      <% end %>
+      <!-- パーソナリティタグ -->
+      <% @student.personality_list.each do |personality| %>
+        <div class="tag personality"><%= personality %></div>
+      <% end %>
+    </div>
+<% end %>
+
+
+<% if client? %>
+  <div class="tags">
+    <h3>求人タグ</h3>
+    <% if @client == current_user.client %>
+    <% end %>
+    <!-- スキルタグ -->
+    <% @client.skill_list.each do |skill| %>
+      <div class="tag skill">
+        <%= link_to skill, :controller => "students", :action => "index", q: {skills_name_cont: skill} %>
+      </div>
+    <% end %>
+    <!-- 企業風土タグ -->
+    <% @client.personality_list.each do |personality| %>
+      <div class="tag personality">
+        <%= link_to personality, :controller => "students", :action => "index", q: {pertonalities_name_cont: personality} %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="tags">
+    <h3>企業風土</h3>
+    <!-- 企業風土タグ -->
+    <% @client.system_list.each do |system| %>
+      <div class="tag system">
+        <%= system %>
+      </div>
+    <% end %>
+  </div>
+  <div><%= link_to "タグを編集する", edit_user_path, class: "to_edit" %></div>
+<% end %>

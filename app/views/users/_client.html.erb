@@ -1,32 +1,3 @@
 <li><%= @client.c_name %> </li>
 <li>@<%= @client.c_id %></li>
 </ul>
-
-<div class="tags">
-  <h3>求人タグ</h3>
-  <% if @client == current_user.client %>
-    <div><%= link_to "タグを編集する", edit_user_path %></div>
-  <% end %>
-  <!-- スキルタグ -->
-  <% @client.skill_list.each do |skill| %>
-    <div class="tag skill">
-      <%= link_to skill, :controller => "students", :action => "index", q: {skills_name_cont: skill} %>
-    </div>
-  <% end %>
-  <!-- 企業風土タグ -->
-  <% @client.personality_list.each do |personality| %>
-    <div class="tag personality">
-      <%= link_to personality, :controller => "students", :action => "index", q: {pertonalities_name_cont: personality} %>
-    </div>
-  <% end %>
-</div>
-
-<div class="tags">
-  <h3>企業風土</h3>
-  <!-- 企業風土タグ -->
-  <% @client.system_list.each do |system| %>
-    <div class="tag system">
-      <%= system %>
-    </div>
-  <% end %>
-</div>
