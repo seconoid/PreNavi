@@ -19,7 +19,7 @@
                   </div>
                   <div class="student">
                     <% if student %>
-                      <%= link_to student.user.name, student%>
+                      <%= link_to student.user.name.gsub(" ", ""), student%>
                     <% end %>
                   </div>
                 <% end %>
