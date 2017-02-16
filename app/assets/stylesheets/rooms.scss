@@ -4,10 +4,10 @@
 
 /* index */
 ul.floors {
-  margin: 0;
+  margin: 0 0 20px;
   padding: 0;
   width: 100%;
-  li.item {
+  li {
     margin: 0 !important;
     display: list-item;
     list-style: none;
@@ -71,17 +71,20 @@ ul.floors {
     background-color: #6de051;
   }
   .bending {
-    background-color: #ff8119;
+    background-color: #eb5d00;
   }
   .saron {
-    background-color: #fff10f;
+    background-color: #f8e352;
   }
   .women {
-    background-color: #2719b2;
+    background-color: #0168b3;
   }
   .men {
-    background-color: #db0015;
+    background-color: #c50030;
   }
+}
+.caution {
+  margin: 10px 0;
 }
 
 /* show*/
