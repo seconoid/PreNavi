@@ -180,10 +180,11 @@ ul.floors {
         }
         .student {
           letter-spacing: -0.8px;
+          line-height: 6px;
           .product {
             width: 200%;
             line-height: 10px;
-            font-size: 15px !important;
+            font-size: 15sspx !important;
             -webkit-transform: scale(0.5);
             -webkit-transform-origin: 0 0;
           }
