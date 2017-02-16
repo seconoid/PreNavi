@@ -51,13 +51,13 @@
     <% if @client.system_list.empty? %>
       <p>タグは登録されていません。</p>
     <% end %>
-    </div>
-      <% @client.system_list.each do |system| %>
-        <div class="tag system">
-          <%= system %>
-        </div>
-      <% end %>
-    </div>
+      <div>
+        <% @client.system_list.each do |system| %>
+          <div class="tag system">
+            <%= system %>
+          </div>
+        <% end %>
+      </div>
   </div>
-  <div class="to_edit"><%= link_to "タグを編集する", edit_user_path %></div>
+  <div><%= link_to "タグを編集する", edit_user_path %></div>
 <% end %>
