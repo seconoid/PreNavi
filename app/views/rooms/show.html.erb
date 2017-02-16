@@ -14,14 +14,25 @@
                 <% if pos_info[:exhibit_code] == "none" %>
                 <% else %>
                   <% student = Student.find_by(exhibit_code: pos_info[:exhibit_code]) %>
-                  <div class="code">
-                    <%= pos_info[:exhibit_code] %>
-                  </div>
-                  <div class="student">
-                    <% if student %>
-                      <%= link_to student.user.name.gsub(" ", ""), student%>
-                    <% end %>
-                  </div>
+                  <% if student && student.exhibit_code == params[:exhibit_code] %>
+                    <div class="code special">
+                      <%= pos_info[:exhibit_code] %>
+                    </div>
+                    <div class="student special">
+                      <% if student %>
+                        <%= link_to student.user.name.gsub(" ", ""), student%>
+                      <% end %>
+                    </div>
+                  <%else %>
+                    <div class="code">
+                      <%= pos_info[:exhibit_code] %>
+                    </div>
+                    <div class="student">
+                      <% if student %>
+                        <%= link_to student.user.name.gsub(" ", ""), student%>
+                      <% end %>
+                    </div>
+                  <% end %>
                 <% end %>
               </li>
             <% else %>
