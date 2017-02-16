@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      log_in @product
       flash[:success] = "作品登録を行いました。"
       redirect_to @product
     else
