@@ -18,11 +18,12 @@
     }
     li {
       display: inline-block;
+      margin: 0 !important;
       width: 60px;
       height: 40px;
       font-size: 12px;
       letter-spacing: normal;
-      vertical-align: top;
+      vertical-align: middle;
     }
   }
   .exist-box {
@@ -63,5 +64,24 @@
   }
   .exit {
     margin-left: 900px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #room {
+    .map {
+      width: 1000px;
+      li {
+        font-size: 8px !important;
+        width: 40px;
+        height: 30px;
+        .code {
+          line-height: 10px;
+        }
+        .student {
+          letter-spacing: -0.8px;
+        }
+      }
+    }
   }
 }
