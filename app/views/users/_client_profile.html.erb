@@ -1,7 +1,8 @@
 <div class="client-profile">
   <div class="box favorites">
     <h2>お気に入り学生</h2>
-      <% if !@favorites.empty? %>
+      <% binding.pry %>
+      <% if @favorites.empty? %>
       <p class="notfound">
         お気に入りの学生を探してみましょう！<br>
         <%= link_to "学生検索ページへ", students_path %>
