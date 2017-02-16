@@ -44,6 +44,19 @@
     text-align: center;
     background-color: #fff;
   }
+  .special.code {
+    background-color: #1d4293;
+  }
+  .special.student {
+    background-color: #44aeea;
+    font-weight: bold;
+    a:link {
+      color: #fff;
+    }
+    a:visited {
+      color: #fff
+    }
+  }
   .doorway {
     font-size: 18px;
     width: 1500px;

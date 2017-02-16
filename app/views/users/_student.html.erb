@@ -3,6 +3,9 @@
 <li>学籍番号： <%= @student.s_code %></li>
 <li>出席番号： <%= @student.s_no %></li>
 <% if client? %>
+  <div class="navi">
+    <%= link_to "場所を確認する", "/rooms/31?exhibit_code=#{@student.exhibit_code}" %>
+  </div>
   <div class="favorite">
     <% unless @favorite %>
       <%= link_to "お気に入り登録する", add_student_path(student), method: :post %>
