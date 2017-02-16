@@ -24,14 +24,17 @@
               <%= link_to (image_tag(@student.user.image.url(:thumb), :class => "frame")) %>
             </div>
             <div class="name">
-              <%= link_to @student.user.name, student_path(@student) %>
+              <%= link_to @student.user.name, student_path(@student) %><br>
+              東京<%= @student.exhibit_code %>
             </div>
           </div>
-          <% if !@student.user.appeals.empty? %>
-            <div class="about">
+          <div class="about">
+            <% if !@student.user.appeals.empty? %>
               <%= @student.user.appeals.first.body %>
-            </div>
+            <% else %>
+              プロフィールは登録されていません。
             <% end %>
+          </div>
         </div>
       </div>
     </div>
