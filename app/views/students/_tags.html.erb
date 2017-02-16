@@ -1,0 +1,19 @@
+<div class="tags">
+  <h3>登録タグ</h3>
+    <% if @student == current_user.student %>
+      <div class="to_edit"><%= link_to "タグを編集する", edit_user_path %></div>
+    <% end %>
+    <!-- スキルタグ -->
+    <div>
+      <% if @student.skill_list.empty? && @student.personality_list.empty? %>
+        <p>タグは登録されていません。</p>
+      <% end %>
+      <% @student.skill_list.each do |skill| %>
+        <div class="tag skill"><%= skill %></div>
+      <% end %>
+      <!-- パーソナリティタグ -->
+      <% @student.personality_list.each do |personality| %>
+        <div class="tag personality"><%= personality %></div>
+      <% end %>
+    </div>
+  </div>
