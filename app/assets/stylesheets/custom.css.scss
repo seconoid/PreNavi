@@ -160,7 +160,10 @@ input {
 
   .content {
     margin: 0;
-    padding: 20px
+    padding: 20px;
+    h1 {
+      font-size: 18px;
+    }
   }
 
   input {

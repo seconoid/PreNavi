@@ -1,10 +1,5 @@
 class RoomsController < ApplicationController
   def index
-    respond_to do |format|
-      @room = rooms
-      format.html
-      format.json { render json: @room }
-    end
   end
 
   def show
