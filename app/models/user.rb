@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   #relation
-  has_one :student
+  has_one :student, dependent: :destroy
   accepts_nested_attributes_for :student
-  has_one :client
+  has_one :client, dependent: :destroy
   accepts_nested_attributes_for :client
   has_many :appeals, dependent: :destroy
   accepts_nested_attributes_for :appeals
