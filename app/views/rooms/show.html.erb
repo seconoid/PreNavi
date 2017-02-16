@@ -29,7 +29,8 @@
                     </div>
                     <div class="student">
                       <% if student %>
-                        <%= link_to student.user.name.gsub(" ", ""), student%>
+                        <%= link_to student.user.name.gsub("/(\s|　)+/, '", ""), student%>
+                        <div class="product"><%= link_to student.product.name, student.product %></div>
                       <% end %>
                     </div>
                   <% end %>

@@ -148,6 +148,9 @@ input {
 
 /** for mobile **/
 @media screen and (max-width: 768px) {
+  p {
+    font-size: 10px;
+  }
   .container {
     padding: 0 !important;
   }
@@ -160,7 +163,10 @@ input {
 
   .content {
     margin: 0;
-    padding: 20px
+    padding: 20px;
+    h1 {
+      font-size: 18px;
+    }
   }
 
   input {

@@ -2,6 +2,92 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* index */
+ul.floors {
+  margin: 0 0 20px;
+  padding: 0;
+  width: 100%;
+  li {
+    margin: 0 !important;
+    display: list-item;
+    list-style: none;
+  }
+  .inline-block {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /** erevetor **/
+  $elevetor-color: #4387e9;
+
+  .stop-elevetor{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: $elevetor-color;
+    position: relative;
+  }
+  .stop-elevetor:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    top: -5px;
+    left: 13px;
+    background-color: $elevetor-color;
+  }
+  .start-elevetor{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: $elevetor-color;
+    position: relative;
+  }
+  .start-elevetor:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 35px;
+    margin-bottom: 5px;
+    top: -5px;
+    left: 13px;
+    background-color: $elevetor-color;
+  }
+  .gone-elevetor{
+    display: inline-block;
+    width: 4px;
+    height: 40px;
+    margin: 0 18px;
+    background-color: $elevetor-color;
+  }
+  .tag {
+    font-size: 10px;
+    padding: 0 3px;
+  }
+  .restroom {
+    background-color: #6de051;
+  }
+  .bending {
+    background-color: #eb5d00;
+  }
+  .saron {
+    background-color: #f8e352;
+  }
+  .women {
+    background-color: #0168b3;
+  }
+  .men {
+    background-color: #c50030;
+  }
+}
+.caution {
+  margin: 10px 0;
+}
+
+/* show*/
 #room {
   overflow: scroll;
   border: 2px solid #3a3a3a;
@@ -86,13 +172,21 @@
       width: 1000px;
       li {
         font-size: 8px !important;
-        width: 40px;
-        height: 30px;
+        width: 50px;
+        height: 40px;
         .code {
-          line-height: 10px;
+          height: 12px;
+          line-height: 12px;
         }
         .student {
           letter-spacing: -0.8px;
+          .product {
+            width: 200%;
+            line-height: 10px;
+            font-size: 15px !important;
+            -webkit-transform: scale(0.5);
+            -webkit-transform-origin: 0 0;
+          }
         }
       }
     }
