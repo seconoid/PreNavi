@@ -27,7 +27,7 @@
     <% if @client == current_user.client %>
     <% end %>
     <!-- スキルタグ -->
-    <% if @client.student.skill_list.empty? && @client.personality_list.empty? %>
+    <% if @client.skill_list.empty? && @client.personality_list.empty? %>
       <p>タグは登録されていません。</p>
     <% end %>
     <% @client.skill_list.each do |skill| %>
@@ -46,7 +46,7 @@
   <div class="tags">
     <h3>企業風土</h3>
     <!-- 企業風土タグ -->
-    <% if @student.system_list.empty? %>
+    <% if @client.system_list.empty? %>
       <p>タグは登録されていません。</p>
     <% end %>
     <% @client.system_list.each do |system| %>
