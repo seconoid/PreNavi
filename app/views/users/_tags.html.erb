@@ -30,17 +30,19 @@
     <% if @client.skill_list.empty? && @client.personality_list.empty? %>
       <p>タグは登録されていません。</p>
     <% end %>
-    <% @client.skill_list.each do |skill| %>
-      <div class="tag skill">
-        <%= link_to skill, :controller => "students", :action => "index", q: {skills_name_cont: skill} %>
-      </div>
-    <% end %>
-    <!-- 企業風土タグ -->
-    <% @client.personality_list.each do |personality| %>
-      <div class="tag personality">
-        <%= link_to personality, :controller => "students", :action => "index", q: {pertonalities_name_cont: personality} %>
-      </div>
-    <% end %>
+    <div>
+      <% @client.skill_list.each do |skill| %>
+        <div class="tag skill">
+          <%= link_to skill, :controller => "students", :action => "index", q: {skills_name_cont: skill} %>
+        </div>
+      <% end %>
+      <!-- 企業風土タグ -->
+      <% @client.personality_list.each do |personality| %>
+        <div class="tag personality">
+          <%= link_to personality, :controller => "students", :action => "index", q: {pertonalities_name_cont: personality} %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <div class="tags">
@@ -49,11 +51,13 @@
     <% if @client.system_list.empty? %>
       <p>タグは登録されていません。</p>
     <% end %>
-    <% @client.system_list.each do |system| %>
-      <div class="tag system">
-        <%= system %>
-      </div>
-    <% end %>
+    </div>
+      <% @client.system_list.each do |system| %>
+        <div class="tag system">
+          <%= system %>
+        </div>
+      <% end %>
+    </div>
   </div>
   <div class="to_edit"><%= link_to "タグを編集する", edit_user_path %></div>
 <% end %>
