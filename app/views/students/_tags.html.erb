@@ -1,6 +1,6 @@
 <div class="tags">
   <h3>登録タグ</h3>
-    <% if @student == current_user.student %>
+    <% if current_user && @student == current_user.student %>
       <div class="to_edit"><%= link_to "タグを編集する", edit_user_path %></div>
     <% end %>
     <!-- スキルタグ -->

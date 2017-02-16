@@ -4,7 +4,7 @@
     <div class="col-md-4">
       <div class="product">
         <h1>作品詳細</h1>
-        <% if @student == current_user.student %>
+        <% if current_user && @student == current_user.student %>
           <p><%= link_to "作品情報を編集する", edit_product_path %></p>
         <% end %>
         <h2>作品紹介：<%= @product.name %></h2>
