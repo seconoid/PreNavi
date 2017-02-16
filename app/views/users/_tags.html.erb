@@ -6,6 +6,9 @@
       <% end %>
       <!-- スキルタグ -->
       <div>
+        <% if @student.skill_list.empty? && @student.personality_list.empty? %>
+          <p>タグは登録されていません。</p>
+        <% end %>
         <% @student.skill_list.each do |skill| %>
           <div class="tag skill"><%= skill %></div>
         <% end %>
@@ -24,6 +27,9 @@
     <% if @client == current_user.client %>
     <% end %>
     <!-- スキルタグ -->
+    <% if @client.student.skill_list.empty? && @client.personality_list.empty? %>
+      <p>タグは登録されていません。</p>
+    <% end %>
     <% @client.skill_list.each do |skill| %>
       <div class="tag skill">
         <%= link_to skill, :controller => "students", :action => "index", q: {skills_name_cont: skill} %>
@@ -40,6 +46,9 @@
   <div class="tags">
     <h3>企業風土</h3>
     <!-- 企業風土タグ -->
+    <% if @student.system_list.empty? %>
+      <p>タグは登録されていません。</p>
+    <% end %>
     <% @client.system_list.each do |system| %>
       <div class="tag system">
         <%= system %>

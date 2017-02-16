@@ -78,6 +78,8 @@ $sub-text: #7c7c7c;
   border-radius: 5px;
   border: 1px solid #4682b4;
   h3 {
+    display: inline-block;
+    font-size: 16px;
     margin: 10px 0;
   }
 }
@@ -90,7 +92,9 @@ $sub-text: #7c7c7c;
 .system {
   background-color: #9ccc65;
 }
-
+.to_edit {
+  display: inline-block;
+}
 .user-detail {
   .box {
     margin-bottom: 20px;
@@ -199,12 +203,7 @@ $sub-text: #7c7c7c;
 
   .tags {
     h3 {
-      font-size: 16px;
-      display: inline-block;
       margin-bottom: 2px !important;
-    }
-    .to_edit {
-      display: inline-block;
     }
   }
   .tag {
