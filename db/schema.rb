@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215050619) do
+ActiveRecord::Schema.define(version: 20170216154100) do
 
   create_table "appeals", force: :cascade do |t|
     t.string   "caption"
@@ -42,10 +42,11 @@ ActiveRecord::Schema.define(version: 20170215050619) do
     t.string   "name",       null: false
     t.string   "about",      null: false
     t.string   "image"
-    t.string   "url"
+    t.string   "site_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "appeal"
+    t.string   "devinfo"
     t.index ["student_id"], name: "index_products_on_student_id"
   end
 

@@ -3,29 +3,36 @@
   <div class="row">
     <div class="col-md-4">
       <div class="product">
-        <h1>作品詳細</h1>
         <% if current_user && @student == current_user.student %>
           <p><%= link_to "作品情報を編集する", edit_product_path %></p>
         <% end %>
-        <h2>作品紹介：<%= @product.name %></h2>
-        <p>
-          <br>
-          作品紹介<br>
-          <%= @product.about %>
-        </p>
-        <p>
-          <br>
-          アピールポイント<br>
-          <%= @product.appeal %>
-        </p>
-        <p>
-          サイトURL<br>
-          <%= link_to @product.url, @product.url %><br>
-        </p>
-        <p>
-          作った人<br>
-          <%= link_to @student.user.name, student_path(@student) %>
-        </p>
+        <h2><%= @product.name %></h2>
+        <div class="product-image">
+          <%= image_tag(@student.product.image.url, :height => 150, :class => "frame") %>
+        </div>
+        <h3>作品概要</h3>
+        <p><%= simple_format(@product.about) %></p>
+        <h3>アピールポイント</h3>
+        <p><%= simple_format(@product.appeal) %></p>
+        <h3>開発環境</h3>
+        <p><%= simple_format(@product.devinfo) %></p>
+        <h3>関連URL</h3>
+        <p><%= link_to @product.site_url, @product.site_url %><p>
+        <div class="product-user">
+          <div class="prof">
+            <div class="image">
+              <%= link_to (image_tag(@student.user.image.url(:thumb), :class => "frame")) %>
+            </div>
+            <div class="name">
+              <%= link_to @student.user.name, student_path(@student) %>
+            </div>
+          </div>
+          <% if !@student.user.appeals.empty? %>
+            <div class="about">
+              <%= @student.user.appeals.first.body %>
+            </div>
+            <% end %>
+        </div>
       </div>
     </div>
   </div>

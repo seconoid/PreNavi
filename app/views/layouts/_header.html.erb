@@ -26,7 +26,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <% if student? %>
-                    <li><%= link_to "作品情報編集", current_user.student.product %></li>
+                    <li><%= link_to "就プレ作品情報", current_user.student.product %></li>
                     <li><%= link_to "フリーアピール編集", edit_user_appeal_path %></li>
                   <% end %>
                   <li><%= link_to "基本情報設定", profile_edit_path %></li>

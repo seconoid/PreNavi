@@ -4,17 +4,20 @@
     <h1>作品情報変更</h1>
     <div class="col-md-6 col-md-offset-3">
       <%= form_for(@product) do |f| %>
-        <%= f.label :name %>
+        <%= f.label :name, "作品名" %>
         <%= f.text_field :name, class: 'form-controle' %>
 
-        <%= f.label :about %>
+        <%= f.label :about, "作品概要" %>
         <%= f.text_area :about, class: 'form-controle' %>
 
-        <%= f.label :appeal %>
+        <%= f.label :appeal, "アピールポイント" %>
         <%= f.text_area :appeal, class: 'form-controle' %>
 
-        <%= f.label :url %>
-        <%= f.text_field :url, class: 'form-controle' %>
+        <%= f.label :devinfo, "開発環境" %>
+        <%= f.text_area :devinfo, class: 'form-controle' %>
+
+        <%= f.label :site_url, "関連URL" %>
+        <%= f.text_field :site_url, class: 'form-controle' %>
 
         <%= f.label :image, "イメージ画像" %>
         <%= f.file_field :image %>

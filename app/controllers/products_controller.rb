@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
       flash[:success] = "作品情報を更新しました。"
-      redirect_to profile_path
+      redirect_to @product
     else
       render 'edit'
     end
@@ -36,6 +36,6 @@ class ProductsController < ApplicationController
   private
 
     def product_params
-      params.require(:product).permit(:student_id, :name, :about, :appeal, :image)
+      params.require(:product).permit(:student_id, :name, :about, :appeal, :image, :site_url, :devinfo)
     end
 end
