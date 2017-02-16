@@ -5,13 +5,15 @@
         <div class="to_edit"><%= link_to "タグを編集する", edit_user_path %></div>
       <% end %>
       <!-- スキルタグ -->
-      <% @student.skill_list.each do |skill| %>
-        <div class="tag skill"><%= skill %></div>
-      <% end %>
-      <!-- パーソナリティタグ -->
-      <% @student.personality_list.each do |personality| %>
-        <div class="tag personality"><%= personality %></div>
-      <% end %>
+      <div>
+        <% @student.skill_list.each do |skill| %>
+          <div class="tag skill"><%= skill %></div>
+        <% end %>
+        <!-- パーソナリティタグ -->
+        <% @student.personality_list.each do |personality| %>
+          <div class="tag personality"><%= personality %></div>
+        <% end %>
+      </div>
     </div>
 <% end %>
 
