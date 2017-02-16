@@ -52,8 +52,8 @@
           <%= text_field_tag "user[client_attributes][system_list]", @user.client.system_list.join(','), :placeholder => "完全週休２日,オフィス綺麗,ボーナスあり"%>
         <% end %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-controle', :placeholder => "パスワードは８文字以上です"%>
+        <%= f.label :password %> パスワードは8文字以上です。
+        <%= f.password_field :password, class: 'form-controle', :placeholder => "パスワード"%>
 
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: 'form-controle', :placeholder => "パスワードの再入力" %>
