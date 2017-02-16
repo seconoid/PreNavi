@@ -6,7 +6,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
   # resize limit
-  process :resize_to_fit => [200, 200]
+  process :resize_to_fit => [300, 300]
 
   # we use jpg
   process :convert => 'jpg'

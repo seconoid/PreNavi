@@ -95,7 +95,7 @@ ul.floors {
     margin: 20px 20px 10px 20px;
     padding: 10px;
     ul {
-      width: 1500px;
+      width: 2000px;
       font-size: 0;
       padding: 0;
       margin: 0;
@@ -105,8 +105,8 @@ ul.floors {
     li {
       display: inline-block;
       margin: 0 !important;
-      width: 60px;
-      height: 40px;
+      width: 80px;
+      height: 60px;
       font-size: 12px;
       letter-spacing: normal;
       vertical-align: middle;
@@ -129,6 +129,11 @@ ul.floors {
     height: 67%;
     text-align: center;
     background-color: #fff;
+    .product {
+      width: 100%;
+      line-height: 11px;
+      font-size: 10px !important;
+    }
   }
   .special.code {
     background-color: #1d4293;
@@ -159,17 +164,19 @@ ul.floors {
     line-height: 30px;
   }
   .enter {
-    margin-left: 70px;
+    margin-left: 80px;
   }
   .exit {
-    margin-left: 900px;
+    margin-left: 1600px;
   }
 }
 
 @media screen and (max-width: 768px) {
   #room {
     .map {
-      width: 1000px;
+      ul {
+        width: 1300px;
+      }
       li {
         font-size: 8px !important;
         width: 50px;
@@ -194,7 +201,7 @@ ul.floors {
       margin-left: 20px;
     }
     .exit {
-      margin-left: 510px;
+      margin-left: 750px;
     }
   }
 }
