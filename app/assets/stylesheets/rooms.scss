@@ -172,13 +172,21 @@ ul.floors {
       width: 1000px;
       li {
         font-size: 8px !important;
-        width: 40px;
-        height: 30px;
+        width: 50px;
+        height: 40px;
         .code {
-          line-height: 10px;
+          height: 12px;
+          line-height: 12px;
         }
         .student {
           letter-spacing: -0.8px;
+          .product {
+            width: 200%;
+            line-height: 10px;
+            font-size: 15px !important;
+            -webkit-transform: scale(0.5);
+            -webkit-transform-origin: 0 0;
+          }
         }
       }
     }
