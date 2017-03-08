@@ -1,44 +1,38 @@
-<% provide(:title, 'エリア一覧') %>
-<div class="content">
-  <h1>フロアから探す</h1>
-  <% if @ver == "hew" %>
-    <%= render "hew" %>
-  <% else %>
-  <div style="margin: 30px 0"><a href="rooms?ver=hew">HEWバージョンへ</a></div>
+<div style="margin: 30px 0"><a href="rooms?ver=hew">就プレバージョンへ</a></div>
   <div class="row">
     <div class="col-md-12">
       <ul class="floors">
         <li class="item">
           <div class="inline-block inline-block stop-elevetor"></div>
           <div class="inline-block">36F</div>
-          <div class="inline-block">ITｼｽﾃﾑ(組み込み)</div>
+          <div class="inline-block">先端ロボット開発学科</div>
+          <div class="tag saron">サロン</div>
           <div class="tag bending">自販機</div>
-          <div class="tag women">女子トイレ</div>
         </li>
         <li class="item">
           <div class="inline-block inline-block gone-elevetor"></div>
-          <div class="inline-block">・・・</div>
+          <div class="inline-block">35F</div>
+        </li>
+        <li class="item">
+          <div class="inline-block inline-block gone-elevetor"></div>
+          <div class="inline-block">34F</div>
+          <div class="inline-block">ミュージック学科</div>
         </li>
         <li class="item">
           <div class="inline-block stop-elevetor"></div>
           <div class="inline-block">33F</div>
           <div class="tag saron">サロン</div>
           <div class="tag bending">自販機</div>
-          <div class="tag men">男子トイレ</div>
         </li>
         <li class="item">
           <div class="inline-block gone-elevetor"></div>
           <div class="inline-block">32F</div>
-          <div class="inline-block">ITｼｽﾃﾑ(報処理)</div>
-          <div class="tag men">男子トイレ</div>
-          <div class="tag women">女子トイレ</div>
+          <div class="inline-block">ゲームデザイン学科</div>
         </li>
         <li class="item">
           <div class="inline-block gone-elevetor"></div>
           <div class="inline-block">31F</div>
-          <div class="inline-block"><a href="rooms/31">ITｼｽﾃﾑ(情報処理)</a></div>
-          <div class="tag restroom">休憩控室</div>
-          <div class="tag men">男子トイレ</div>
+          <div class="inline-block">ゲーム制作学科</div>
         </li>
         <li class="item">
           <div class="inline-block stop-elevetor"></div>
@@ -47,21 +41,19 @@
         <li class="item">
           <div class="inline-block gone-elevetor"></div>
           <div class="inline-block">29F</div>
-          <div class="inline-block">ｸﾞﾗﾌｨｯｸﾃﾞｻﾞｲﾝ・ｶｰﾃﾞｻﾞｲﾝ</div>
-          <div class="tag men">男子トイレ</div>
+          <div class="inline-block">ゲーム企画学科</div>
+          <div class="inline-block">グラフィックデザイン学科</div>
         </li>
         <li class="item">
           <div class="inline-block gone-elevetor"></div>
           <div class="inline-block">28F</div>
-          <div class="inline-block">ITｼｽﾃﾑ(WEB)</div>
-          <div class="tag men">男子トイレ</div>
+          <div class="inline-block">CG映像学科／アニメ・イラスト学科</div>
         </li>
         <li class="item">
           <div class="inline-block stop-elevetor"></div>
           <div class="inline-block">27F</div>
           <div class="tag saron">サロン</div>
           <div class="tag bending">自販機</div>
-          <div class="tag women">女子トイレ</div>
         </li>
         <li class="item">
           <div class="inline-block gone-elevetor"></div>
@@ -70,14 +62,14 @@
         <li class="item">
           <div class="inline-block gone-elevetor"></div>
           <div class="inline-block">25F</div>
+          <div class="inline-block"><a href="rooms/257">高度情報処理学科</a></div>
+          <div class="inline-block">WEB開発学科</div>
         </li>
         <li class="item">
           <div class="inline-block stop-elevetor"></div>
           <div class="inline-block">24F</div>
           <div class="tag saron">サロン</div>
           <div class="tag bending">自販機</div>
-          <div class="tag women">女子トイレ</div>
-          <div class="tag men">男子トイレ</div>
         </li>
         <li class="item">
           <div class="inline-block gone-elevetor"></div>
@@ -86,14 +78,11 @@
         <li class="item">
           <div class="inline-block start-elevetor"></div>
           <div class="inline-block">2F</div>
-          <div class="inline-block">受付</div>
+          <div class="inline-block">セブンイレブン</div>
         </li>
       </ul>
       <p class="caution">
-        ・全館禁煙となっております。ご了承ください。<br>
-        ・お待ち合わせには31階休憩室をご利用ください。<br>
-        ・ご不明な点などございましたらお近くの教員やスタッフまでお声かけください。
+        ・ご不明な点などございましたらお近くの教員やスタッフまでお声かけください。<br>
+        ・お困りの際はIT012に投票してください。
       </p>
     </div>
-    <% end %>
-</div>

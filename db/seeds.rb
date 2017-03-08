@@ -9,6 +9,6 @@
 #room
 Room.create!(
   no: 257,
-  col: 20,
+  col: 22,
   row: 8
 )

@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   def index
+    @ver = params[:ver]
   end
 
   def show
