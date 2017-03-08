@@ -27,6 +27,22 @@
       </div>
     </div>
     <div class="col-sm-9">
+      <% unless @reviews.empty? %>
+        <div class="review">
+          <div class="box favorites">
+            <h2>評価を頂いた企業</h2>
+            <div class="row students">
+            <% @reviews.each do |rev| %>
+              <div class="col-xs-2">
+                <% client = rev.client %>
+                <div class="img"><%= link_to image_tag(client.user.image.thumb.url, size:70), client %></div>
+                <span class="name"><%= link_to client.user.name, client %></span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <% end %>
       <% if @student %>
         <%= render partial: "student_detail", locals: {appeals: @user.appeals} %>
       <% end %>

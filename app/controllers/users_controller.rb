@@ -19,6 +19,9 @@ class UsersController < ApplicationController
       @skill_recommends = Student.search(skills_name_cont: @skill).result(distinct: true).shuffle
       @personality_recommends = Student.search(personalities_name_cont: @personality).result(distinct: true).shuffle
     end
+    if @student
+      @reviews = Review.where("student_id = ?", @student.id)
+    end
   end
 
   def create
