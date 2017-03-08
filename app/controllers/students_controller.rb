@@ -14,6 +14,7 @@ class StudentsController < ApplicationController
     @user = User.find(@student[:user_id])
     @product = Product.find_by(student_id: @student.id)
     if client?
+      @review= Review.find_by(client_id: current_user.client.id)
       @favorite = Favorite.find_by(client_id: current_user.client.id, student_id: params[:id])
     end
   end
