@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+  def show
+    @review = Review.find(params[:id])
+    @client = Client.find(@review.client.id)
+  end
+
   def new
     @client = User.find(session[:user_id]).client
     @student = Student.find(params[:id])

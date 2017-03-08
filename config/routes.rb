@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       post "add", to: "favorites#create"
     end
     member do
+      get "show_review", to: "reviews#show"
       get "review", to: "reviews#new"
       post "review", to: "reviews#create"
     end
