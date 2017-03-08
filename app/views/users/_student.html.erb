@@ -14,6 +14,10 @@
     <% end %>
   </div>
   <div class="favorite">
-    <%= link_to "この学生を評価する", review_student_path(student), method: :get %>
+    <% unless @review %>
+      <%= link_to "この学生を評価する", review_student_path(student), method: :get %>
+    <% else %>
+      <%= link_to "評価を確認する", review_student_path %>
+    <% end %>
   </div>
 <% end %>

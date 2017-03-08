@@ -8,13 +8,13 @@
         <%= f.hidden_field :student_id, :value => @student.id %>
         <%= f.hidden_field :client_id, :value => @client.id %>
 
-         <%= f.label :plan_point, "企画力" %>
+         <%= f.label :plan_point, "企画力" %> (100点満点)
         <%= f.text_field :plan_point, class: 'form-controle' %>
 
-        <%= f.label :concept_point, "コンセプト" %>
+        <%= f.label :concept_point, "コンセプト" %> (100点満点)
         <%= f.text_field :concept_point, class: 'form-controle' %>
 
-        <%= f.label :impl_point, "実装力" %>
+        <%= f.label :impl_point, "実装力" %> (100点満点)
         <%= f.text_field :impl_point, class: 'form-controle' %>
 
         <%= f.label :comment, "コメント" %>
