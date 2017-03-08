@@ -13,4 +13,7 @@
       <%= link_to "お気に入りを解除する", favorite_path(@favorite), method: :delete %>
     <% end %>
   </div>
+  <div class="favorite">
+    <%= link_to "この学生を評価する", review_student_path(student), method: :get %>
+  </div>
 <% end %>

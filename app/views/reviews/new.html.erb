@@ -1,0 +1,27 @@
+<% provide(:title, "評価・コメント") %>
+<div class="content">
+  <h1>学生への評価</h1>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @review, url: review_student_path do |f| %>
+        <%= f.hidden_field :student_id, :value => @student.id %>
+        <%= f.hidden_field :client_id, :value => @client.id %>
+
+         <%= f.label :plan_point, "企画力" %>
+        <%= f.text_field :plan_point, class: 'form-controle' %>
+
+        <%= f.label :concept_point, "コンセプト" %>
+        <%= f.text_field :concept_point, class: 'form-controle' %>
+
+        <%= f.label :impl_point, "実装力" %>
+        <%= f.text_field :impl_point, class: 'form-controle' %>
+
+        <%= f.label :comment, "コメント" %>
+        <%= f.text_area :comment, rows: 5, class: 'form-controle' %>
+
+        <%= f.submit "評価する", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

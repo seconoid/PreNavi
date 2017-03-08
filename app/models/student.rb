@@ -3,6 +3,7 @@ class Student < ApplicationRecord
   has_one :product
   has_many :favorites
   has_many :clients, through: :favorites
-  has_many :user, through: :review
+  has_many :reviews
+  has_many :clients, through: :reviews
   acts_as_taggable_on :skills, :personalities
 end

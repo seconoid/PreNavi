@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20170308155517) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "user_id",       null: false
+    t.integer  "client_id",     null: false
     t.integer  "student_id",    null: false
     t.integer  "plan_point"
     t.integer  "concept_point"
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 20170308155517) do
     t.string   "comment"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["client_id"], name: "index_reviews_on_client_id"
     t.index ["student_id"], name: "index_reviews_on_student_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|

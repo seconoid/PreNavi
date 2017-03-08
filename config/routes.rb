@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     member do
       post "add", to: "favorites#create"
     end
+    member do
+      get "review", to: "reviews#new"
+      post "review", to: "reviews#create"
+    end
   end
   resources :products
   resources :favorites, only: [:destroy]
