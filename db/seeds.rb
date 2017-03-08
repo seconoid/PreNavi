@@ -8,8 +8,7 @@
 
 #room
 Room.create!(
-  no: 31,
-  col: 24,
-  row: 10
+  no: 257,
+  col: 20,
+  row: 8
 )
-
