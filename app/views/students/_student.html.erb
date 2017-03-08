@@ -6,7 +6,7 @@
       <span class="tag skill not-float-tag"%><%= link_to skill, :controller => "students", :action => "index", q: {skills_name_cont: skill} %></span>
     <% end %>
     <% student.personality_list.each do |personality| %>
-      <span class="tag personality not-float-tag"%><%= link_to personality, :controller => "students", :action => "index", q: {skills_name_cont: personality} %></span>
+      <span class="tag personality not-float-tag"%><%= link_to personality, :controller => "students", :action => "index", q: {personalities_name_cont: personality} %></span>
     <% end %>
   </div>
 </li>
