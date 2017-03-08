@@ -34,7 +34,7 @@
               <h2>評価を頂いた企業</h2>
               <div class="row students">
                 <% @reviews.each do |rev| %>
-                  <div class="col-xs-2 client">
+                  <div class="col-xs-4 col-md-2 client">
                     <% client = rev.client %>
                     <div class="img"><%= link_to image_tag(client.user.image.thumb.url, size:70), client %></div>
                     <span class="name"><%= link_to client.user.name, client %></span><br>
