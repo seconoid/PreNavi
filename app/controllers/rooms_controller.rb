@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   def index
+    @ver = params[:ver]
   end
 
   def show
@@ -364,6 +365,420 @@ class RoomsController < ApplicationController
           exhibit_code: "IT117",
           x: 23,
           y: 8
+        },
+      ]
+    end
+    if no == 257
+      json = [
+        {
+          exhibit_code: "none",
+          x: 1,
+          y: 0
+        },
+        {
+          exhibit_code: "IT007",
+          x: 2,
+          y: 0
+        },
+        {
+          exhibit_code: "IT004",
+          x: 4,
+          y: 0
+        },
+        {
+          exhibit_code: "IT019",
+          x: 5,
+          y: 0
+        },
+        {
+          exhibit_code: "IT008",
+          x: 7,
+          y: 0
+        },
+        {
+          exhibit_code: "IT051",
+          x: 8,
+          y: 0
+        },
+        {
+          exhibit_code: "IT011",
+          x: 10,
+          y: 0
+        },
+        {
+          exhibit_code: "IT024",
+          x: 11,
+          y: 0
+        },
+        {
+          exhibit_code: "IT049",
+          x: 13,
+          y: 0
+        },
+        {
+          exhibit_code: "IT022",
+          x: 14,
+          y: 0
+        },
+        {
+          exhibit_code: "IT006",
+          x: 16,
+          y: 0
+        },
+        {
+          exhibit_code: "IT016",
+          x: 17,
+          y: 0
+        },
+        {
+          exhibit_code: "IT015",
+          x: 19,
+          y: 0
+        },
+        {
+          exhibit_code: "IT021",
+          x: 20,
+          y: 0
+        },
+        {
+          exhibit_code: "none",
+          x: 1,
+          y: 1
+        },
+         {
+          exhibit_code: "none",
+          x: 2,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 4,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 5,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 7,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 8,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 10,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 11,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 13,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 14,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 16,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 17,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 19,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 20,
+          y: 1
+        },
+        {
+          exhibit_code: "none",
+          x: 1,
+          y: 2
+        },
+        {
+          exhibit_code: "IT043",
+          x: 2,
+          y: 2
+        },
+        {
+          exhibit_code: "IT018",
+          x: 4,
+          y: 2
+        },
+        {
+          exhibit_code: "IT026",
+          x: 5,
+          y: 2
+        },
+        {
+          exhibit_code: "IT041",
+          x: 7,
+          y: 2
+        },
+        {
+          exhibit_code: "IT045",
+          x: 8,
+          y: 2
+        },
+        {
+          exhibit_code: "IT014",
+          x: 10,
+          y: 2
+        },
+        {
+          exhibit_code: "IT002",
+          x: 11,
+          y: 2
+        },
+        {
+          exhibit_code: "IT012",
+          x: 13,
+          y: 2
+        },
+        {
+          exhibit_code: "IT005",
+          x: 14,
+          y: 2
+        },
+        {
+          exhibit_code: "IT001",
+          x: 16,
+          y: 2
+        },
+        {
+          exhibit_code: "IT044",
+          x: 17,
+          y: 2
+        },
+        {
+          exhibit_code: "IT046",
+          x: 19,
+          y: 2
+        },
+        {
+          exhibit_code: "IT017",
+          x: 20,
+          y: 2
+        },
+        {
+          exhibit_code: "none",
+          x: 1,
+          y: 3
+        },
+         {
+          exhibit_code: "none",
+          x: 2,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 4,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 5,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 7,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 8,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 10,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 11,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 13,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 14,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 16,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 17,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 19,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 20,
+          y: 3
+        },
+        {
+          exhibit_code: "none",
+          x: 2,
+          y: 5
+        },
+        {
+          exhibit_code: "none",
+          x: 3,
+          y: 5
+        },
+        {
+          exhibit_code: "none",
+          x: 4,
+          y: 5
+        },
+        {
+          exhibit_code: "none",
+          x: 5,
+          y: 5
+        },
+        {
+          exhibit_code: "none",
+          x: 6,
+          y: 5
+        },
+        {
+          exhibit_code: "none",
+          x: 7,
+          y: 5
+        },
+        {
+          exhibit_code: "none",
+          x: 8,
+          y: 5
+        },
+        {
+          exhibit_code: "IT009",
+          x: 14,
+          y: 5
+        },
+        {
+          exhibit_code: "IT047",
+          x: 15,
+          y: 5
+        },
+        {
+          exhibit_code: "IT010",
+          x: 16,
+          y: 5
+        },
+        {
+          exhibit_code: "IT048",
+          x: 17,
+          y: 5
+        },
+        {
+          exhibit_code: "IT013",
+          x: 18,
+          y: 5
+        },
+        {
+          exhibit_code: "IT050",
+          x: 19,
+          y: 5
+        },
+        {
+          exhibit_code: "none",
+          x: 2,
+          y: 6
+        },
+        {
+          exhibit_code: "none",
+          x: 3,
+          y: 6
+        },
+        {
+          exhibit_code: "none",
+          x: 4,
+          y: 6
+        },
+        {
+          exhibit_code: "none",
+          x: 5,
+          y: 6
+        },
+        {
+          exhibit_code: "none",
+          x: 6,
+          y: 6
+        },
+        {
+          exhibit_code: "none",
+          x: 7,
+          y: 6
+        },
+        {
+          exhibit_code: "none",
+          x: 8,
+          y: 6
+        },
+        {
+          exhibit_code: "IT020",
+          x: 14,
+          y: 6
+        },
+        {
+          exhibit_code: "IT003",
+          x: 15,
+          y: 6
+        },
+        {
+          exhibit_code: "IT071",
+          x: 16,
+          y: 6
+        },
+        {
+          exhibit_code: "IT025",
+          x: 17,
+          y: 6
+        },
+        {
+          exhibit_code: "IT023",
+          x: 18,
+          y: 6
+        },
+        {
+          exhibit_code: "IT042",
+          x: 19,
+          y: 6
         },
       ]
     end

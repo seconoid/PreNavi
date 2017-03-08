@@ -2,8 +2,13 @@
 <div class="top-box center">
   <div class="item">
     <h1>素敵な学生、発 見。</h1>
-    <%= link_to "企業新規登録", signup_path(attr: 'client'), class:  "btn btn-lg btn-primary" %>
-    <%= link_to "学生新規登録", signup_path(attr: 'student'), class: "btn btn-lg btn-warning" %>
+    <% if logged_in? %>
+      <%= link_to "フロアから検索", rooms_path, class:  "btn btn-lg btn-primary" %>
+      <%= link_to "特徴から検索", students_path, class: "btn btn-lg btn-warning" %>
+    <% else %>
+      <%= link_to "企業新規登録", signup_path(attr: 'client'), class:  "btn btn-lg btn-primary" %>
+      <%= link_to "学生新規登録", signup_path(attr: 'student'), class: "btn btn-lg btn-warning" %>
+    <% end %>
   </div>
   <hr>
   <div class="box-footer"><a href="#">プレナビとは？</a></div>
