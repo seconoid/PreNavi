@@ -115,13 +115,13 @@ footer small {
 }
 
 footer ul {
-  float: right;
-  list-style: none;
+  width: 100%;
+  list-style: none !important;
 }
 
 footer ul li {
   float: left;
-  margin-left: 15px;
+  margin-left: 15px !important;
 }
 
 /* forms */
