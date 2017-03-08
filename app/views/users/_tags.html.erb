@@ -10,11 +10,11 @@
           <p>タグは登録されていません。</p>
         <% end %>
         <% @student.skill_list.each do |skill| %>
-          <div class="tag skill"><%= skill %></div>
+          <div class="tag skill"><%= link_to skill, :controller => "students", :action => "index", q: {skills_name_cont: skill} %></div>
         <% end %>
         <!-- パーソナリティタグ -->
         <% @student.personality_list.each do |personality| %>
-          <div class="tag personality"><%= personality %></div>
+          <div class="tag personality"><%= link_to personality, :controller => "students", :action => "index", q: {pertonalities_name_cont: personality} %></div>
         <% end %>
       </div>
     </div>
